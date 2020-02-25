@@ -1,20 +1,18 @@
 ---
-#theme : "night"
-theme : "beige"
+theme : "night"
+#theme : "beige"
 transition: "slide"
 highlightTheme: "monokai"
 logoImg: "logo.png"
 slideNumber: true
-title: "VSCode Reveal intro"
+title: "What is Kubernetes and How do I Get Started?"
 revealOptions:
     transition: 'zoom'
 ---
 
-# Kubernetes!
+# What is Kubernetes and How do I Get Started?
 
  [Steve Miller](https://www.r15cookie.com) - Site Reliability Engineer
-
-<small>Created by [](https://www.evilznet.com) / [@Evilznet](https://twitter.com/Evilznet)</small>
 
 ---
 

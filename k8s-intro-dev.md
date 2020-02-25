@@ -1,11 +1,11 @@
 ---
-theme : "night"
-#theme : "beige"
+#theme : "night"
+theme : "beige"
 transition: "slide"
 highlightTheme: "monokai"
 logoImg: "logo.png"
 slideNumber: true
-title: "What is Kubernetes and How do I Get Started?"
+title: "What is Kubernetes!? and How do I Get Started?"
 revealOptions:
     transition: 'zoom'
 ---
@@ -78,7 +78,7 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
     But...why is this important?
 </aside>
 
---
+----
 
 ## Docker Builds
 
@@ -101,23 +101,23 @@ Use docker to build AND package app.
     Just demo with "port-forward"...then expose later to world!
 </aside>
 
---
+----
 
 ## Deployment
 
---
+----
 
 ## Pod
 
---
+----
 
 ## Service
 
---
+----
 
 ## Ingress
 
---
+----
 
 ## Operators and CRDs
 
@@ -131,7 +131,7 @@ Use docker to build AND package app.
   Demonstrate Ingress, and exposing to outside world
 </aside>
 
---
+----
 
 ## Java Considerations
 
@@ -182,7 +182,7 @@ Your app just needs to worry about it's function.  Seperate functions can be con
     * Testing
 </aside>
 
---
+----
 
 ## Solutions
 
@@ -207,7 +207,7 @@ Your app just needs to worry about it's function.  Seperate functions can be con
   * The DevOps Handbook (Companion ot the Phoenix Project) 
   * [Hipster Shop](https://github.com/GoogleCloudPlatform/microservices-demo)
 
---
+----
 
 ## Resources - CKA Exam
   * CKA Exam
@@ -220,9 +220,12 @@ Your app just needs to worry about it's function.  Seperate functions can be con
 <aside class="notes">
   TODO: Gather resourcss for the developer certification
 </aside>
---
+
+----
 
 ## Sources
 
 [Managing Kubernetes Containers in Docker](https://www.oreilly.com/content/how-to-manage-docker-containers-in-kubernetes-with-java/)
 [Oreilly Java Shoppint App](https://github.com/danielbryantuk/oreilly-docker-java-shopping/)
+
+

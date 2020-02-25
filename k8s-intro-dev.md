@@ -5,16 +5,14 @@ transition: "slide"
 highlightTheme: "monokai"
 logoImg: "logo.png"
 slideNumber: true
-title: "VSCode Reveal intro"
+title: "What is Kubernetes!? and How do I Get Started?"
 revealOptions:
     transition: 'zoom'
 ---
 
-# Kubernetes!
+# What is Kubernetes and How do I Get Started?
 
  [Steve Miller](https://www.r15cookie.com) - Site Reliability Engineer
-
-<small>Created by [](https://www.evilznet.com) / [@Evilznet](https://twitter.com/Evilznet)</small>
 
 ---
 
@@ -80,7 +78,7 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
     But...why is this important?
 </aside>
 
---
+----
 
 ## Docker Builds
 
@@ -103,23 +101,23 @@ Use docker to build AND package app.
     Just demo with "port-forward"...then expose later to world!
 </aside>
 
---
+----
 
 ## Deployment
 
---
+----
 
 ## Pod
 
---
+----
 
 ## Service
 
---
+----
 
 ## Ingress
 
---
+----
 
 ## Operators and CRDs
 
@@ -133,7 +131,7 @@ Use docker to build AND package app.
   Demonstrate Ingress, and exposing to outside world
 </aside>
 
---
+----
 
 ## Java Considerations
 
@@ -184,7 +182,7 @@ Your app just needs to worry about it's function.  Seperate functions can be con
     * Testing
 </aside>
 
---
+----
 
 ## Solutions
 
@@ -209,7 +207,7 @@ Your app just needs to worry about it's function.  Seperate functions can be con
   * The DevOps Handbook (Companion ot the Phoenix Project) 
   * [Hipster Shop](https://github.com/GoogleCloudPlatform/microservices-demo)
 
---
+----
 
 ## Other Research Items to Pursue
 
@@ -232,9 +230,12 @@ Your app just needs to worry about it's function.  Seperate functions can be con
 <aside class="notes">
   TODO: Gather resourcss for the developer certification
 </aside>
---
+
+----
 
 ## Sources
 
 [Managing Kubernetes Containers in Docker](https://www.oreilly.com/content/how-to-manage-docker-containers-in-kubernetes-with-java/)
 [Oreilly Java Shoppint App](https://github.com/danielbryantuk/oreilly-docker-java-shopping/)
+
+

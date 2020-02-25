@@ -1,2 +1,5 @@
-FROM nbrown/revealjs:3.5.0-onbuild
-# Potentially build/use https://github.com/dargmuesli/docker-revealjs/tree/3.8.0
+FROM danidemi/docker-reveal.js
+RUN rm /slides/*
+COPY k8s-intro-dev.md /slides/index.md
+RUN pandoc -t revealjs -s -o /slides/index.html < /slides/index.md
+RUN rm /slides/index.md

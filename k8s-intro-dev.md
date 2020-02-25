@@ -217,7 +217,7 @@ Your app just needs to worry about it's function.  Seperate functions can be con
   * ArgoCD or Tekton Pipelines
   * FluxCD
 
---
+----
 
 ## Resources - CKA Exam
   * CKA Exam

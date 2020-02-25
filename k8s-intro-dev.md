@@ -189,7 +189,7 @@ Your app just needs to worry about it's function.  Seperate functions can be con
 ## Solutions
 
   * Microservices: Rapid development, 
-  * Visibility: OpenTelemetry, Airbrake, etc.
+  * Visibility: OpenTelemetry, Airbrake, etc. 
   * [KubeProd](https://kubeprod.io/): Bitami service to lay out a lot of the good initial infrastructure. 
 
 <aside class="notes">
@@ -208,6 +208,16 @@ Your app just needs to worry about it's function.  Seperate functions can be con
   * Oreilly's Designing Distributed Systems
   * The DevOps Handbook (Companion ot the Phoenix Project) 
   * [Hipster Shop](https://github.com/GoogleCloudPlatform/microservices-demo)
+
+--
+
+## Other Research Items to Pursue
+
+  * Skaffold
+  * Service Mesh: Istio or Linkerd
+  * gRPC
+  * ArgoCD or Tekton Pipelines
+  * FluxCD
 
 --
 

@@ -5,14 +5,16 @@ transition: "slide"
 highlightTheme: "monokai"
 logoImg: "logo.png"
 slideNumber: true
-title: "What is Kubernetes!? and How do I Get Started?"
+title: "VSCode Reveal intro"
 revealOptions:
     transition: 'zoom'
 ---
 
-# What is Kubernetes and How do I Get Started?
+# Kubernetes!
 
  [Steve Miller](https://www.r15cookie.com) - Site Reliability Engineer
+
+<small>Created by [](https://www.evilznet.com) / [@Evilznet](https://twitter.com/Evilznet)</small>
 
 ---
 
@@ -75,10 +77,11 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
     Time: 10 min
     Take existing Springboot app, buildable by Maven, and show with example of build.
     Manually run docker container on it's own.
+    Discuss assumptions...
     But...why is this important?
 </aside>
 
-----
+--
 
 ## Docker Builds
 
@@ -88,6 +91,30 @@ Use docker to build AND package app.
   TODO: Repo with build information
 </aside>
 
+
+--
+
+## Remember...Don't Treat Containers like VMs
+
+Disposable, and ideally horizontally scalable.
+
+<aside class="notes">
+  Kuberentes has no concept of "migrating" containers.  For instance, if an individual host is killed off,
+  k8s will simple spin up a new container.
+</aside>
+
+--
+
+## 12-factor App
+
+[https://12factor.net/](https://12factor.net/)
+
+<aside class="notes">
+  One of the keys to understaing Microservice architecture...and k8s overall
+  #3: Store configs in environment
+  #6: Stateless processes
+  #9: Disposability
+</aside>
 
 ---
 
@@ -101,23 +128,23 @@ Use docker to build AND package app.
     Just demo with "port-forward"...then expose later to world!
 </aside>
 
-----
+--
 
 ## Deployment
 
-----
+--
 
 ## Pod
 
-----
+--
 
 ## Service
 
-----
+--
 
 ## Ingress
 
-----
+--
 
 ## Operators and CRDs
 
@@ -131,7 +158,7 @@ Use docker to build AND package app.
   Demonstrate Ingress, and exposing to outside world
 </aside>
 
-----
+--
 
 ## Java Considerations
 
@@ -182,7 +209,7 @@ Your app just needs to worry about it's function.  Seperate functions can be con
     * Testing
 </aside>
 
-----
+--
 
 ## Solutions
 
@@ -207,7 +234,7 @@ Your app just needs to worry about it's function.  Seperate functions can be con
   * The DevOps Handbook (Companion ot the Phoenix Project) 
   * [Hipster Shop](https://github.com/GoogleCloudPlatform/microservices-demo)
 
-----
+--
 
 ## Other Research Items to Pursue
 
@@ -217,7 +244,7 @@ Your app just needs to worry about it's function.  Seperate functions can be con
   * ArgoCD or Tekton Pipelines
   * FluxCD
 
-----
+--
 
 ## Resources - CKA Exam
   * CKA Exam
@@ -230,12 +257,9 @@ Your app just needs to worry about it's function.  Seperate functions can be con
 <aside class="notes">
   TODO: Gather resourcss for the developer certification
 </aside>
-
-----
+--
 
 ## Sources
 
 [Managing Kubernetes Containers in Docker](https://www.oreilly.com/content/how-to-manage-docker-containers-in-kubernetes-with-java/)
 [Oreilly Java Shoppint App](https://github.com/danielbryantuk/oreilly-docker-java-shopping/)
-
-

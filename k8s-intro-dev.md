@@ -323,4 +323,5 @@ https://www.r15cookie.com
 ## Sources
 
 [Managing Kubernetes Containers in Docker](https://www.oreilly.com/content/how-to-manage-docker-containers-in-kubernetes-with-java/)
+  * Warning: Some references are a bit dated, but still a good book.  See the updates I made in my repo at [Oreilly](https://github.com/ssmiller25/oreilly-docker-java-shopping)
 [Oreilly Java Shoppint App](https://github.com/danielbryantuk/oreilly-docker-java-shopping/)

@@ -98,6 +98,20 @@ Going to start from an example microservice app
 
 --
 
+## 12-factor App
+
+Not required, but super helpful
+[https://12factor.net/](https://12factor.net/)
+
+<aside class="notes">
+  One of the keys to understaing Microservice architecture...and k8s overall
+  #3: Store configs in environment
+  #6: Stateless processes
+  #9: Disposability
+</aside>
+
+--
+
 ## Simple Docker Build
 
 ```
@@ -134,29 +148,6 @@ Use docker to build AND package app.
 </aside>
 
 
---
-
-## Remember...Don't Treat Containers like VMs
-Should be disposable and horizontally scalable.
-
-<aside class="notes">
-  Kuberentes has no concept of "migrating" containers.  For instance, if an individual host is killed off,
-  k8s will simple spin up a new container.
-</aside>
-
---
-
-## 12-factor App
-
-[https://12factor.net/](https://12factor.net/)
-
-<aside class="notes">
-  One of the keys to understaing Microservice architecture...and k8s overall
-  #3: Store configs in environment
-  #6: Stateless processes
-  #9: Disposability
-</aside>
-
 ---
 
 ## Step 3: Get it in Kubernetes!
@@ -171,23 +162,41 @@ Should be disposable and horizontally scalable.
 
 --
 
-## Deployment
+## Deploy all three Microservices
+
+Kubernetes constructs:
+* Pod
+* Deployment (manages Pods)
+* Service (exposes a group of pods to other pod, or potentially to the outside world)
+* Ingress (more sophisticated way to expose an applicaton to the outside word)
+
+<aside class="notes>
+  With all three containers created:
+  * Create deployment
+  * Show pods created.  Use port-forward to demo that pod is listening
+  * Create service for all three "applications"
+  * Create an ingress to expose front end
+  * Demo fully operational app
+  * Demo deleted a pod, and deployment recreating
+</aside>
 
 --
 
-## Pod
+## Remember...Don't Treat Containers like VMs
+Should be disposable and horizontally scalable.
+
+<aside class="notes">
+  Kuberentes has no concept of "migrating" containers.  For instance, if an individual host is killed off,
+  k8s will simple spin up a new container.
+</aside>
 
 --
 
-## Service
+## Design Patterns!
 
---
+  * Oreilly's Designing Distributed Systems book
+  * Microsoft [Design Pattern Page](https://docs.microsoft.com/en-us/azure/architecture/patterns/): A bit Azure focused, but mostly useful across cloud providers/on-prem
 
-## Ingress
-
---
-
-## Operators and CRDs
 
 ---
 
@@ -219,11 +228,14 @@ Memory
 ## What Does Kubernetes Get Me?
 
 Your app just needs to worry about it's function.  Seperate functions can be configured to handle:
+* Load balancing
+* Health checks and automatic application restarts
+* Deployment and Rollback
 * URL Routing
 * TLS Termination
 * Authentication
 * Metrics, Logging, Healthchecks
-* Rollbacks
+
 
 
 <aside class="notes">

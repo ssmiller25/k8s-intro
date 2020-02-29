@@ -1,5 +1,4 @@
 ---
-#theme : "night"
 theme : "beige"
 transition: "slide"
 highlightTheme: "monokai"
@@ -12,9 +11,8 @@ revealOptions:
 
 # Kubernetes!
 
- [Steve Miller](https://www.r15cookie.com) - Site Reliability Engineer
+ [Steve Miller](https://www.r15cookie.com) - Devops Practioner
 
-<small>Created by [](https://www.evilznet.com) / [@Evilznet](https://twitter.com/Evilznet)</small>
 
 ---
 
@@ -65,6 +63,27 @@ Kubernetes Included (optionally)!
 
 ## Step 2: Containerize My Java App!
 
+Going to start from an example microservice app
+
+![Microservice Overview](microarch.png)
+
+<span style="font-size:12pt;">Source: Bryant, Daniel. (2017). Containerizing Continuous Delivery in Java.</span>
+
+<aside class="notes">
+    Time: 10 min
+    Take existing Springboot app, buildable by Maven, and show with example of build.
+    Original: https://github.com/danielbryantuk/oreilly-docker-java-shopping/
+    Customized for this presentation: https://github.com/danielbryantuk/oreilly-docker-java-shopping/ (Apache 2.0 license, so good for modification.)
+
+    Manually run docker container on it's own.
+    Discuss assumptions...
+    But...why is this important?
+</aside>
+
+--
+
+## Simple Docker Build
+
 ```
 FROM openjdk:8-jre
 ADD target/shopfront-0.0.1-SNAPSHOT.jar app.jar
@@ -72,13 +91,15 @@ EXPOSE 8010
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
 ```
 
-
 <aside class="notes">
-    Time: 10 min
-    Take existing Springboot app, buildable by Maven, and show with example of build.
-    Manually run docker container on it's own.
-    Discuss assumptions...
-    But...why is this important?
+  Lines of Docker File
+    * FROM - base image.  Talk about trusted base images
+    * ADD - add file to the image
+    * EXPOSE - exposed port...more important if just running in docker itself
+    * ENTRYPOINT - Command to run when starting docker container
+  
+  * This method works...but build process is outside of docker.
+  * We are still depending on local build environment, so harder to reproduce.
 </aside>
 
 --
@@ -88,15 +109,19 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
 Use docker to build AND package app.
 
 <aside class="notes">
-  TODO: Repo with build information
+  TODO: Slightly modified with Maven build, as well as layered containers.
+
+  Additional Lines
+  * FROM ... AS : Allow reference for multi-stage build
+  * RUN : Run command within docker, creating new layer
+  * COPY --from=builder : Move files from previous build
 </aside>
 
 
 --
 
 ## Remember...Don't Treat Containers like VMs
-
-Disposable, and ideally horizontally scalable.
+Should be disposable and horizontally scalable.
 
 <aside class="notes">
   Kuberentes has no concept of "migrating" containers.  For instance, if an individual host is killed off,
@@ -221,6 +246,14 @@ Your app just needs to worry about it's function.  Seperate functions can be con
   Recomment "looking" at Kubeprod, but deploying individual services yourself as necessary.
 </aside>
 
+---
+
+## Thank You!
+
+https://www.github.com/ssmiller25/k8s-intro
+
+https://www.r15cookie.com
+
 
 
 ---
@@ -228,9 +261,9 @@ Your app just needs to worry about it's function.  Seperate functions can be con
 
 ## Resources
 
+  * Oreilly's Designing Distributed Systems
   * Digital Ocean [Kubernetes for Full Stack Developers](https://www.digitalocean.com/community/curriculums/kubernetes-for-full-stack-developers)
   * Aqua Security [Kubernetes 101](https://www.aquasec.com/resources/kubernetes-101/)
-  * Oreilly's Designing Distributed Systems
   * The DevOps Handbook (Companion ot the Phoenix Project) 
   * [Hipster Shop](https://github.com/GoogleCloudPlatform/microservices-demo)
 
@@ -242,7 +275,7 @@ Your app just needs to worry about it's function.  Seperate functions can be con
   * Service Mesh: Istio or Linkerd
   * gRPC
   * ArgoCD or Tekton Pipelines
-  * FluxCD
+  * Flux
 
 --
 

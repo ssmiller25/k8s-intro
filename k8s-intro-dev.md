@@ -274,6 +274,24 @@ Your app just needs to worry about it's function.  Seperate functions can be con
   Recomment "looking" at Kubeprod, but deploying individual services yourself as necessary.
 </aside>
 
+
+--
+
+## Places to Host Kubernetes 
+
+* Big Cloud Providers( **Google Cloud GKE**, AWS EKS, Azure AKS)
+* From https://free-for.dev/ (Below are Kubernetes Namespace as a Service)
+  * https://kubesail.com/: 1 Core of CPU, 512MB of RAM, 100MB of storage and 1 domain
+  * https://k8spin.cloud/: 100 mCore of CPU, 128MB of RAM.
+  * https://okteto.com/: Three namespaces, each with 8GB of RAM, 4 CPUs and 150GB Disk space.
+
+<aside class="notes">
+  * GKE not bad, assuming you use preemtable instances...and DON'T use their load balancer/ingress that will run $20/month
+  * Free for dev services I've only lightly tested
+    * k8spin.cloud: Super easy entry (can tie to Github account
+</aside>
+
+
 ---
 
 ## Thank You!

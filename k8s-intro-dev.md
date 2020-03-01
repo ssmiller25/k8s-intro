@@ -271,8 +271,8 @@ Your app just needs to worry about it's function.  Seperate functions can be con
 
   * Management of complexity: Rapid development, testing
   * Obervability: OpenTelemetry, Airbrake, etc. 
-  * Adhoc debugging: Sysdig, Sidecar container [kubectl-debug](https://github.com/aylei/kubectl-debug)
-  * K8S complexity: [KubeProd](https://kubeprod.io/) as a good starting point. 
+  * Adhoc debugging: Sysdig, `kubectl exec ... sh`, Sidecar container [kubectl-debug](https://github.com/aylei/kubectl-debug)
+  * K8S complexity: [KubeProd](https://kubeprod.io/) as a good starting point.   
 
 <aside class="notes">
   Recomment "looking" at Kubeprod, but deploying individual services yourself as necessary.

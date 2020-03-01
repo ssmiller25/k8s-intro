@@ -248,7 +248,9 @@ Your app just needs to worry about it's function.  Seperate functions can be con
 ### Kubernetes and Microservice Downsides
 
   * Downsides of Microservices in General
-  * Distributed Tracing
+    * Management of complexity with larger deployments
+    * Obervability
+    * Ad-hoc debugging ability
   * A Fluid Environment 
 
 ![CNCF Landscape](cncf-landscape.png)
@@ -260,15 +262,17 @@ Your app just needs to worry about it's function.  Seperate functions can be con
     * How to segment services
     * Debugging a Distributed System
     * Testing
+  * k8s itself is a complex environment
 </aside>
 
 --
 
 ## Solutions
 
-  * Microservices: Rapid development, 
-  * Visibility: OpenTelemetry, Airbrake, etc. 
-  * [KubeProd](https://kubeprod.io/): Bitami service to lay out a lot of the good initial infrastructure. 
+  * Management of complexity: Rapid development, testing
+  * Obervability: OpenTelemetry, Airbrake, etc. 
+  * Adhoc debugging: Sysdig, Sidecar container [kubectl-debug](https://github.com/aylei/kubectl-debug)
+  * K8S complexity: [KubeProd](https://kubeprod.io/) as a good starting point. 
 
 <aside class="notes">
   Recomment "looking" at Kubeprod, but deploying individual services yourself as necessary.

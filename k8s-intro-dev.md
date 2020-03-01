@@ -138,6 +138,18 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
 
 Use docker to build AND package app.
 
+```
+FROM maven:3-jdk-8 as builder
+COPY pom.xml /tmp/
+COPY src /tmp/src/
+WORKDIR /tmp/
+RUN mvn clean install
+FROM openjdk:8-jre 
+COPY --from=builder /tmp/target/shopfront-0.0.1-SNAPSHOT.jar app.jar
+EXPOSE 8010
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+```
+
 <aside class="notes">
   TODO: Slightly modified with Maven build, as well as layered containers.
 

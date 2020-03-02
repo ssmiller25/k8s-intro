@@ -72,6 +72,11 @@ Kubernetes Included (optionally)!
     3 min...just shoinwing screenshots of installation/config on mac/windows
     Go over basics of containers...follow downward if we need to dig into further
 
+    Docker for desktop is probably the easiest option for Windows and Mac, but many others exist:
+      * Minikube: Probably the most popular outside of Docker for Desktop (or more popular, but not QUITE as integrated)
+      * Micro.k8s: A Canonical offering, supports Linux, Mac, and Windows
+      * kind: Kubernetes in Docker.  Still need docker, but can do multi-"hosts" if you want to simulate a cluster.
+
     Mention could be anything that build docker containers...docker open source, or OCI compabile software like buildah
 </aside>
 
@@ -195,11 +200,17 @@ Kubernetes constructs:
 --
 
 ## Remember...Don't Treat Containers like VMs
-Should be disposable and horizontally scalable.
+
+* Should be disposable and horizontally scalable.
+* Avoid persistent data on the container *
+
+<sub>* Under most circumstances...</sub>
 
 <aside class="notes">
   Kuberentes has no concept of "migrating" containers.  For instance, if an individual host is killed off,
   k8s will simple spin up a new container.
+
+  Discuss persistent data on containers, and k8s overall
 </aside>
 
 --

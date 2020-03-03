@@ -233,17 +233,32 @@ Kubernetes constructs:
 
 --
 
-## Java Considerations
-
-Memory
+## Deployments/Pods/Services
 
 <aside class="notes">
-  Docker container and JVM, by default, will see entire memory of machine!
-  https://jaxenter.com/nobody-puts-java-container-139373.html
-    JDK 9 or greater
-    Specifically the following JVM options: -XX:+UseCGroupMemoryLimitForHeap
-    -XX:+UnlockExperimentalVMOptions
+  Directly kubectl commands to create all three deployments, and services for each
+  Demo deleted a pod, and watching it be recreated
+  kubectl port-forward to see service
+</aside>
 
+--
+
+## Ingress
+
+<aside class="notes">
+  Create ingress to expose service to outside world.  Demo with web browser
+</aside>
+
+--
+
+## Deployment In Real Life
+
+<aside class="notes">
+  More difficult.  Some strategies
+  * Export yaml files, build pipeline to apply after push to "production".  Also combined with kustomize.
+  * Helm
+  * K8S Native CICD tools: ArgoCD, Tekton, JenkinsX (Is JenkinsX really k8s native...maybe with the Jenkins Operator...)
+  * Flux 
 </aside>
 
 ---
@@ -351,6 +366,21 @@ https://www.r15cookie.com
   * gRPC
   * ArgoCD or Tekton Pipelines
   * Flux
+
+--
+
+## Java Considerations
+
+Memory
+
+<aside class="notes">
+  Docker container and JVM, by default, will see entire memory of machine!
+  https://jaxenter.com/nobody-puts-java-container-139373.html
+    JDK 9 or greater
+    Specifically the following JVM options: -XX:+UseCGroupMemoryLimitForHeap
+    -XX:+UnlockExperimentalVMOptions
+
+</aside>
 
 --
 

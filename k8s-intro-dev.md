@@ -308,14 +308,16 @@ Your app just needs to worry about it's function.  Seperate functions can be con
 
 * Big Cloud Providers( **Google Cloud GKE**, AWS EKS, Azure AKS)
 * From https://free-for.dev/ (Below are Kubernetes Namespace as a Service)
-  * https://kubesail.com/: 1 Core of CPU, 512MB of RAM, 100MB of storage and 1 domain
-  * https://k8spin.cloud/: 100 mCore of CPU, 128MB of RAM.
-  * https://okteto.com/: Three namespaces, each with 8GB of RAM, 4 CPUs and 150GB Disk space.
+  * https://kubesail.com/  1 Core of CPU, 512MB of RAM, 100MB of storage and 1 domain
+  * https://k8spin.cloud/  100 mCore of CPU, 128MB of RAM.
+  * https://okteto.com/  Three namespaces, each with 8GB of RAM, 4 CPUs and 150GB Disk space.
 
 <aside class="notes">
   * GKE not bad, assuming you use preemtable instances...and DON'T use their load balancer/ingress that will run $20/month
-  * Free for dev services I've only lightly tested
-    * k8spin.cloud: Super easy entry (can tie to Github account
+  * Free for dev services I've only lightly tested.  All integrate with github for authentication:
+    * kubesail.com: Seems solid., two level upgrade path ($7/month, and a $25/month)
+    * k8spin.cloud: Super easy entry (can tie to Github account).  Although console was unavailable at times
+    * okteto.com: Also super-easy setup.  Although generious resources, no upgrade path without going on-prep
 </aside>
 
 

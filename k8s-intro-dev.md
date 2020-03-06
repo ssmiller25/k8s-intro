@@ -13,7 +13,6 @@ revealOptions:
 
  [Steve Miller](https://www.r15cookie.com) - Devops Practioner
 
-
 ---
 
 ## Goal
@@ -28,11 +27,9 @@ Cover the essential steps to run an application in Kubernetes!
     * Exposure to Kubernetes?
 </aside>
 
-
 ---
 
-
-## What Is Kubernetes!
+## What Is Kubernetes?
 
 <aside class="notes">
   5 min
@@ -69,7 +66,7 @@ Containers: a really, really fancy way to isolate and configure running processe
 Kubernetes Included (optionally)!
 
 <aside class="notes">
-    3 min...just shoinwing screenshots of installation/config on mac/windows
+    3 min...just showing screenshots of installation/config on mac/windows
     Go over basics of containers...follow downward if we need to dig into further
 
     Docker for desktop is probably the easiest option for Windows and Mac, but many others exist:
@@ -77,7 +74,7 @@ Kubernetes Included (optionally)!
       * Micro.k8s: A Canonical offering, supports Linux, Mac, and Windows
       * kind: Kubernetes in Docker.  Still need docker, but can do multi-"hosts" if you want to simulate a cluster.
 
-    Mention could be anything that build docker containers...docker open source, or OCI compabile software like buildah
+    Mention could be anything that build docker containers...docker open source, or OCI compatible software like buildah
 </aside>
 
 ---
@@ -92,7 +89,7 @@ Going to start from an example microservice app
 
 <aside class="notes">
     Time: 10 min
-    Take existing Springboot app, buildable by Maven, and show with example of build.
+    Take existing Spring Boot app, build-able by Maven, and show with example of build.
     Original: https://github.com/danielbryantuk/oreilly-docker-java-shopping/
     Customized for this presentation: https://github.com/danielbryantuk/oreilly-docker-java-shopping/ (Apache 2.0 license, so good for modification.)
 
@@ -109,7 +106,7 @@ Not required, but super helpful
 [https://12factor.net/](https://12factor.net/)
 
 <aside class="notes">
-  One of the keys to understaing Microservice architecture...and k8s overall
+  One of the keys to understanding Microservice architecture...and k8s overall
   #3: Store configs in environment
   #6: Stateless processes
   #9: Disposability
@@ -119,7 +116,7 @@ Not required, but super helpful
 
 ## Simple Docker Build
 
-```
+```Dockerfile
 FROM openjdk:8-jre
 ADD target/shopfront-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8010
@@ -135,6 +132,7 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
   
   * This method works...but build process is outside of docker.
   * We are still depending on local build environment, so harder to reproduce.
+
 </aside>
 
 --
@@ -143,7 +141,7 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
 
 Use docker to build AND package app.
 
-```
+```Dockerfile
 FROM maven:3-jdk-8 as builder
 COPY pom.xml /tmp/
 COPY src /tmp/src/
@@ -182,10 +180,11 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
 ## Deploy all three Microservices
 
 Kubernetes constructs:
+
 * Pod
 * Deployment (manages Pods)
 * Service (exposes a group of pods to other pod, or potentially to the outside world)
-* Ingress (more sophisticated way to expose an applicaton to the outside word)
+* Ingress (more sophisticated way to expose an application to the outside word)
 
 <aside class="notes>
   With all three containers created:
@@ -217,8 +216,8 @@ Kubernetes constructs:
 
 ## Design Patterns!
 
-  * Oreilly's Designing Distributed Systems book
-  * Microsoft [Design Pattern Page](https://docs.microsoft.com/en-us/azure/architecture/patterns/): A bit Azure focused, but mostly useful across cloud providers/on-prem
+* O'Reilly's Designing Distributed Systems book
+* Microsoft [Design Pattern Page](https://docs.microsoft.com/en-us/azure/architecture/patterns/): A bit Azure focused, but mostly useful across cloud providers/on-prem
 
 
 ---
@@ -257,7 +256,7 @@ Kubernetes constructs:
   More difficult.  Some strategies
   * Export yaml files, build pipeline to apply after push to "production".  Also combined with kustomize.
   * Helm
-  * K8S Native CICD tools: ArgoCD, Tekton, JenkinsX (Is JenkinsX really k8s native...maybe with the Jenkins Operator...)
+  * K8S Native CI/CD tools: ArgoCD, Tekton, JenkinsX (Is JenkinsX really k8s native...maybe with the Jenkins Operator...)
   * Flux 
 </aside>
 
@@ -265,14 +264,15 @@ Kubernetes constructs:
 
 ## What Does Kubernetes Get Me?
 
-Your app just needs to worry about it's function.  Seperate functions can be configured to handle:
+Your app just needs to worry about it's function.  Separate functions can be configured to handle:
+
 * Load balancing
 * Health checks and automatic application restarts
 * Deployment and Rollback
 * URL Routing
 * TLS Termination
 * Authentication
-* Metrics, Logging, Healthchecks
+* Metrics, Logging, Health Checks
 
 
 
@@ -285,35 +285,36 @@ Your app just needs to worry about it's function.  Seperate functions can be con
 
 ### Kubernetes and Microservice Downsides
 
-  * Downsides of Microservices in General
-    * Management of complexity with larger deployments
-    * Obervability
-    * Ad-hoc debugging ability
-  * A Fluid Environment 
+* Downsides of Microservices in General
+  * Management of complexity with larger deployments
+  * Observability
+  * Ad-hoc debugging ability
+* A Fluid Environment
 
 ![CNCF Landscape](cncf-landscape.png)
 
 <aside class="notes">
-  Time: 5 min, including solutions
+Time: 5 min, including solutions
 
-  * Downsides of Microservices
-    * How to segment services
-    * Debugging a Distributed System
-    * Testing
-  * k8s itself is a complex environment
+* Downsides of Microservices
+  * How to segment services
+  * Debugging a Distributed System
+  * Testing
+* k8s itself is a complex environment
+
 </aside>
 
 --
 
 ## Solutions
 
-  * Management of complexity: Rapid development, testing
-  * Obervability: OpenTelemetry, Airbrake, etc. 
-  * Adhoc debugging: Sysdig, `kubectl exec ... sh`, Sidecar container [kubectl-debug](https://github.com/aylei/kubectl-debug)
-  * K8S complexity: [KubeProd](https://kubeprod.io/) as a good starting point.   
+* Management of complexity: Rapid development, testing
+* Observability: OpenTelemetry, Airbrake, etc. 
+* Ad hoc debugging: Sysdig, `kubectl exec ... sh`, Sidecar container [kubectl-debug](https://github.com/aylei/kubectl-debug)
+* K8S complexity: [KubeProd](https://kubeprod.io/) as a good starting point.   
 
 <aside class="notes">
-  Recomment "looking" at Kubeprod, but deploying individual services yourself as necessary.
+  Recommend "looking" at Kubeprod, but deploying individual services yourself as necessary.
 </aside>
 
 
@@ -332,40 +333,36 @@ Your app just needs to worry about it's function.  Seperate functions can be con
   * Free for dev services I've only lightly tested.  All integrate with github for authentication:
     * kubesail.com: Seems solid., two level upgrade path ($7/month, and a $25/month)
     * k8spin.cloud: Super easy entry (can tie to Github account).  Although console was unavailable at times
-    * okteto.com: Also super-easy setup.  Although generious resources, no upgrade path without going on-prep
+    * okteto.com: Also super-easy setup.  Although generous resources, no upgrade path without going on-prep
 </aside>
 
-
 ---
 
-## Thank You!
+## Thank You
 
-https://www.github.com/ssmiller25/k8s-intro
+<https://www.github.com/ssmiller25/k8s-intro>
 
-https://www.r15cookie.com
-
-
+<https://www.r15cookie.com>
 
 ---
-
 
 ## Resources
 
-  * Oreilly's Designing Distributed Systems
-  * Digital Ocean [Kubernetes for Full Stack Developers](https://www.digitalocean.com/community/curriculums/kubernetes-for-full-stack-developers)
-  * Aqua Security [Kubernetes 101](https://www.aquasec.com/resources/kubernetes-101/)
-  * The DevOps Handbook (Companion ot the Phoenix Project) 
-  * [Hipster Shop](https://github.com/GoogleCloudPlatform/microservices-demo)
+* O'Reilly's Designing Distributed Systems
+* Digital Ocean [Kubernetes for Full Stack Developers](https://www.digitalocean.com/community/curriculums/kubernetes-for-full-stack-developers)
+* Aqua Security [Kubernetes 101](https://www.aquasec.com/resources/kubernetes-101/)
+* The DevOps Handbook (Companion ot the Phoenix Project) 
+* [Hipster Shop](https://github.com/GoogleCloudPlatform/microservices-demo)
 
 --
 
 ## Other Research Items to Pursue
 
-  * Skaffold
-  * Service Mesh: Istio or Linkerd
-  * gRPC
-  * ArgoCD or Tekton Pipelines
-  * Flux
+* Skaffold
+* Service Mesh: Istio or Linkerd
+* gRPC
+* ArgoCD or Tekton Pipelines
+* Flux
 
 --
 
@@ -385,12 +382,12 @@ Memory
 --
 
 ## Resources - CKA Exam
-  * CKA Exam
-    * https://www.contino.io/insights/the-ultimate-guide-to-passing-the-cka-exam 
-    * https://github.com/cncf/curriculum
-    * https://www.katacoda.com/courses/kubernetes/playground 
-    * https://blog.autsoft.hu/certified-kubernetes-administrator/
 
+* CKA Exam
+  * https://www.contino.io/insights/the-ultimate-guide-to-passing-the-cka-exam 
+  * https://github.com/cncf/curriculum
+  * https://www.katacoda.com/courses/kubernetes/playground 
+  * https://blog.autsoft.hu/certified-kubernetes-administrator/
 
 <aside class="notes">
   TODO: Gather resourcss for the developer certification
@@ -399,6 +396,6 @@ Memory
 
 ## Sources
 
-[Managing Kubernetes Containers in Docker](https://www.oreilly.com/content/how-to-manage-docker-containers-in-kubernetes-with-java/)
+* [Managing Kubernetes Containers in Docker](https://www.oreilly.com/content/how-to-manage-docker-containers-in-kubernetes-with-java/)
   * Warning: Some references are a bit dated, but still a good book.  See the updates I made in my repo at [Oreilly](https://github.com/ssmiller25/oreilly-docker-java-shopping)
-[Oreilly Java Shoppint App](https://github.com/danielbryantuk/oreilly-docker-java-shopping/)
+* [O'Reilly Java Shopping App](https://github.com/danielbryantuk/oreilly-docker-java-shopping/)

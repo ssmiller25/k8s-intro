@@ -5,6 +5,8 @@ highlightTheme: "monokai"
 logoImg: "logo.png"
 slideNumber: true
 title: "VSCode Reveal intro"
+separator: <!--s-->
+verticalSeparator: <!--v-->
 revealOptions:
     transition: 'zoom'
 ---
@@ -13,7 +15,7 @@ revealOptions:
 
  [Steve Miller](https://www.r15cookie.com) - Devops Practioner
 
----
+ <!--s-->
 
 ## Goal
 
@@ -27,7 +29,7 @@ Cover the essential steps to run an application in Kubernetes!
     * Exposure to Kubernetes?
 </aside>
 
----
+ <!--s-->
 
 ## What Is Kubernetes?
 
@@ -41,7 +43,7 @@ Cover the essential steps to run an application in Kubernetes!
   Need to coordinate all these services...which is what Kubernetes is all about.
 </aside>
 
----
+ <!--s-->
 
 ## Containers
 
@@ -59,7 +61,7 @@ Containers: a really, really fancy way to isolate and configure running processe
     But...beware security, as depending on infrastructure and configuration, but not be as isolated as one would hope.
 </aside>
 
----
+ <!--s-->
 
 ## Step 1: Install Docker Desktop
 
@@ -77,7 +79,7 @@ Kubernetes Included (optionally)!
     Mention could be anything that build docker containers...docker open source, or OCI compatible software like buildah
 </aside>
 
----
+<!--s-->
 
 ## Step 2: Containerize My Java App!
 
@@ -98,7 +100,7 @@ Going to start from an example microservice app
     But...why is this important?
 </aside>
 
---
+<!--v-->
 
 ## 12-factor App
 
@@ -112,7 +114,7 @@ Not required, but super helpful
   #9: Disposability
 </aside>
 
---
+<!--v-->
 
 ## Simple Docker Build
 
@@ -135,7 +137,7 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
 
 </aside>
 
---
+<!--v-->
 
 ## Docker Builds
 
@@ -162,8 +164,7 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
   * COPY --from=builder : Move files from previous build
 </aside>
 
-
----
+<!--s-->
 
 ## Step 3: Get it in Kubernetes!
 
@@ -175,7 +176,7 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
     Just demo with "port-forward"...then expose later to world!
 </aside>
 
---
+<!--v-->
 
 ## Deploy all three Microservices
 
@@ -196,7 +197,7 @@ Kubernetes constructs:
   * Demo deleted a pod, and deployment recreating
 </aside>
 
---
+<!--v-->
 
 ## Remember...Don't Treat Containers like VMs
 
@@ -212,15 +213,14 @@ Kubernetes constructs:
   Discuss persistent data on containers, and k8s overall
 </aside>
 
---
+<!--v-->
 
 ## Design Patterns!
 
 * O'Reilly's Designing Distributed Systems book
 * Microsoft [Design Pattern Page](https://docs.microsoft.com/en-us/azure/architecture/patterns/): A bit Azure focused, but mostly useful across cloud providers/on-prem
 
-
----
+<!--s-->
 
 ## Step 4: Orchestrate Some Microservices!
 
@@ -230,7 +230,7 @@ Kubernetes constructs:
   Demonstrate Ingress, and exposing to outside world
 </aside>
 
---
+<!--v-->
 
 ## Deployments/Pods/Services
 
@@ -240,7 +240,7 @@ Kubernetes constructs:
   kubectl port-forward to see service
 </aside>
 
---
+<!--v-->
 
 ## Ingress
 
@@ -248,7 +248,7 @@ Kubernetes constructs:
   Create ingress to expose service to outside world.  Demo with web browser
 </aside>
 
---
+<!--v-->
 
 ## Deployment In Real Life
 
@@ -260,7 +260,7 @@ Kubernetes constructs:
   * Flux 
 </aside>
 
----
+<!--s-->
 
 ## What Does Kubernetes Get Me?
 
@@ -281,7 +281,7 @@ Your app just needs to worry about it's function.  Separate functions can be con
   Step back...what does this buy me as a developer
 </aside>
 
----
+<!--s-->
 
 ### Kubernetes and Microservice Downsides
 
@@ -304,7 +304,7 @@ Time: 5 min, including solutions
 
 </aside>
 
---
+<!--v-->
 
 ## Solutions
 
@@ -317,8 +317,7 @@ Time: 5 min, including solutions
   Recommend "looking" at Kubeprod, but deploying individual services yourself as necessary.
 </aside>
 
-
---
+<!--v-->
 
 ## Places to Host Kubernetes 
 
@@ -336,7 +335,7 @@ Time: 5 min, including solutions
     * okteto.com: Also super-easy setup.  Although generous resources, no upgrade path without going on-prep
 </aside>
 
----
+<!--s-->
 
 ## Thank You
 
@@ -344,7 +343,7 @@ Time: 5 min, including solutions
 
 <https://www.r15cookie.com>
 
----
+<!--s-->
 
 ## Resources
 
@@ -354,7 +353,7 @@ Time: 5 min, including solutions
 * The DevOps Handbook (Companion ot the Phoenix Project) 
 * [Hipster Shop](https://github.com/GoogleCloudPlatform/microservices-demo)
 
---
+<!--v-->
 
 ## Other Research Items to Pursue
 
@@ -364,7 +363,7 @@ Time: 5 min, including solutions
 * ArgoCD or Tekton Pipelines
 * Flux
 
---
+<!--v-->
 
 ## Java Considerations
 
@@ -379,7 +378,7 @@ Memory
 
 </aside>
 
---
+<!--v-->
 
 ## Resources - CKA Exam
 
@@ -392,7 +391,8 @@ Memory
 <aside class="notes">
   TODO: Gather resourcss for the developer certification
 </aside>
---
+
+<!--v-->
 
 ## Sources
 

@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: k8s-intro-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: k8s-intro
+          servicePort: 1948
+        path: /
+status:
+  loadBalancer: {}

@@ -22,7 +22,7 @@ Cover the essential steps to run an application in Kubernetes!
 <aside class="notes">
   Migth want to emphasis not necessarily production, or automated...but at least stpes are there.
   Questions to ask audience to taylor presentation:
-    * What does everyone do.  Deveopers/Operations/DevOps
+    * What does everyone do.  Developers/Operations/DevOps
     * Have many people of used docker?  Dockerized an app?
     * Exposure to Kubernetes?
 </aside>

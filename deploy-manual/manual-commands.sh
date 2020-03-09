@@ -8,4 +8,5 @@ kubectl create deployment k8s-intro --image ssmiller25/k8s-intro
 # Increase replica count
 # kubectl scale deployment k8s-intro --replicas=3
 kubectl expose deployment/k8s-intro --port 1948
+kubectl apply -f ingress.yaml
 

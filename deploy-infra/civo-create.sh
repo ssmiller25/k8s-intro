@@ -1,1 +1,1 @@
-civo k8s create --size g2.xsmall --wait --save
+civo k8s create k8s-intro --size g2.xsmall --wait --save

@@ -81,23 +81,15 @@ Kubernetes Included (optionally)!
 
 <!--s-->
 
-## Step 2: Containerize My Java App!
+## Step 2: Containerize An App
 
-Going to start from an example microservice app
-
-![Microservice Overview](microarch.png)
+Let's start...with this presentation!
 
 <span style="font-size:12pt;">Source: Bryant, Daniel. (2017). Containerizing Continuous Delivery in Java.</span>
 
 <aside class="notes">
     Time: 10 min
-    Take existing Spring Boot app, build-able by Maven, and show with example of build.
-    Original: https://github.com/danielbryantuk/oreilly-docker-java-shopping/
-    Customized for this presentation: https://github.com/danielbryantuk/oreilly-docker-java-shopping/ (Apache 2.0 license, so good for modification.)
 
-    Manually run docker container on it's own.
-    Discuss assumptions...
-    But...why is this important?
 </aside>
 
 <!--v-->
@@ -119,21 +111,64 @@ Not required, but super helpful
 ## Simple Docker Build
 
 ```Dockerfile
-FROM openjdk:8-jre
-ADD target/shopfront-0.0.1-SNAPSHOT.jar app.jar
-EXPOSE 8010
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+FROM webpronl/reveal-md:latest
+COPY *.png /slides/
+COPY k8s-intro-dev.md /slides/
+
+EXPOSE 1948
 ```
+
+From <https://github.com/ssmiller25/k8s-intro/blob/master/Dockerfile>
+
 
 <aside class="notes">
   Lines of Docker File
     * FROM - base image.  Talk about trusted base images
-    * ADD - add file to the image
+    * COPY - add file to the image (also can use ADD keyword, which supports URLs and untaring directly)
     * EXPOSE - exposed port...more important if just running in docker itself
-    * ENTRYPOINT - Command to run when starting docker container
-  
-  * This method works...but build process is outside of docker.
-  * We are still depending on local build environment, so harder to reproduce.
+    * ENTRYPOINT - Command to run when starting docker container (not in this example, but show off looking
+      up base container)
+
+</aside>
+
+<!--v-->
+
+Testing out
+
+```sh
+docker build . -t ssmiller25/k8s-intro:latest
+docker run -d --rm -p 1948:1948 ssmiller25/k8s-intro:latest
+```
+
+Also see https://github.com/ssmiller25/k8s-intro/blob/master/Makefile 
+
+<aside class="notes">
+  Mention Makefile with more details
+  * Build: will look for dockerfile and run
+  * Docker run flogs to point out
+    * -d: in background
+    * --rm: remove after stopping
+    * -p: expose a port externally
+</aside>
+
+<!--s-->
+
+## Step 3: Get it in Kubernetes!
+
+![Microservice Overview](microarch.png)
+
+<aside class="notes">
+    Time: 10 min
+    Show deployment of container in Kubernetes.  Not sure if I want to do straight kubectl command, or perhaps show off some yaml
+    Also, make note that this is NOT how you generally would deploy in production
+
+    Take existing Spring Boot app, build-able by Maven, and show with example of build.
+    Original: https://github.com/danielbryantuk/oreilly-docker-java-shopping/
+    Customized for this presentation: https://github.com/danielbryantuk/oreilly-docker-java-shopping/ (Apache 2.0 license, so good for modification.)
+
+    Manually run docker container on it's own.
+    Discuss assumptions...
+    But...why is this important?
 
 </aside>
 
@@ -164,17 +199,7 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
   * COPY --from=builder : Move files from previous build
 </aside>
 
-<!--s-->
 
-## Step 3: Get it in Kubernetes!
-
-<aside class="notes">
-    Time: 10 min
-    Show deployment of container in Kubernetes.  Not sure if I want to do straight kubectl command, or perhaps show off some yaml
-    Also, make note that this is NOT how you generally would deploy in production
-
-    Just demo with "port-forward"...then expose later to world!
-</aside>
 
 <!--v-->
 

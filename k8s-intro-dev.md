@@ -22,7 +22,7 @@ revealOptions:
 Cover the essential steps to run an application in Kubernetes!
 
 <aside class="notes">
-  Migth want to emphasis not necessarily production, or automated...but at least stpes are there.
+  Might want to emphasis not necessarily production, or automated...but at least steps are there.
   Questions to ask audience to taylor presentation:
     * What does everyone do.  Developers/Operations/DevOps
     * Have many people of used docker?  Dockerized an app?
@@ -65,7 +65,9 @@ Containers: a really, really fancy way to isolate and configure running processe
 
 ## Step 1: Install Docker Desktop
 
-Kubernetes Included (optionally)!
+Kubernetes Included (optionally)
+
+![Enable Kubernetes Dialog](settings-kubernetes.png)
 
 <aside class="notes">
     3 min...just showing screenshots of installation/config on mac/windows
@@ -83,9 +85,9 @@ Kubernetes Included (optionally)!
 
 ## Step 2: Containerize An App
 
-Let's start...with this presentation!
+Let's say...this presentation
 
-<span style="font-size:12pt;">Source: Bryant, Daniel. (2017). Containerizing Continuous Delivery in Java.</span>
+x
 
 <aside class="notes">
     Time: 10 min
@@ -156,6 +158,8 @@ Also see https://github.com/ssmiller25/k8s-intro/blob/master/Makefile
 ## Step 3: Get it in Kubernetes!
 
 ![Microservice Overview](microarch.png)
+
+<span style="font-size:12pt;">Source: Bryant, Daniel. (2017). Containerizing Continuous Delivery in Java.</span>
 
 <aside class="notes">
     Time: 10 min

@@ -19,7 +19,7 @@ revealOptions:
 
 ## Goal
 
-Cover the essential steps to run an application in Kubernetes!
+Cover the essential steps to run an application in Kubernetes
 
 <aside class="notes">
   Might want to emphasis not necessarily production, or automated...but at least steps are there.
@@ -87,25 +87,10 @@ Kubernetes Included (optionally)
 
 Let's say...this presentation
 
-x
 
 <aside class="notes">
     Time: 10 min
 
-</aside>
-
-<!--v-->
-
-## 12-factor App
-
-Not required, but super helpful
-[https://12factor.net/](https://12factor.net/)
-
-<aside class="notes">
-  One of the keys to understanding Microservice architecture...and k8s overall
-  #3: Store configs in environment
-  #6: Stateless processes
-  #9: Disposability
 </aside>
 
 <!--v-->
@@ -157,6 +142,37 @@ Also see https://github.com/ssmiller25/k8s-intro/blob/master/Makefile
 
 ## Step 3: Get it in Kubernetes!
 
+<aside class="notes">
+  Use https://github.com/ssmiller25/k8s-intro/tree/master/deploy-manual
+  with example command, to deploy this into Kubernetes
+</aside>
+
+<!--v-->
+
+## Essential Components in Kubernetes
+
+Kubernetes constructs:
+
+* Pod
+* Deployment: Manages Pods
+* Service: Exposes pod(s)
+* Ingress: More sophisticated way to expose an application
+
+<aside class="notes>
+  With all three containers created:
+  * Create deployment
+  * Show pods created.  Use port-forward to demo that pod is listening
+  * Create service for all three "applications"
+  * Create an ingress to expose front end
+  * Demo fully operational app
+  * Demo deleted a pod, and deployment recreating
+</aside>
+
+
+<!--s-->
+
+## Microservice Application
+
 ![Microservice Overview](microarch.png)
 
 <span style="font-size:12pt;">Source: Bryant, Daniel. (2017). Containerizing Continuous Delivery in Java.</span>
@@ -194,6 +210,8 @@ EXPOSE 8010
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
 ```
 
+Full Repo: <https://github.com/ssmiller25/oreilly-docker-java-shopping>
+
 <aside class="notes">
   TODO: Slightly modified with Maven build, as well as layered containers.
 
@@ -207,23 +225,16 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
 
 <!--v-->
 
-## Deploy all three Microservices
+## 12-factor App
 
-Kubernetes constructs:
+Not required, but super helpful
+[https://12factor.net/](https://12factor.net/)
 
-* Pod
-* Deployment (manages Pods)
-* Service (exposes a group of pods to other pod, or potentially to the outside world)
-* Ingress (more sophisticated way to expose an application to the outside word)
-
-<aside class="notes>
-  With all three containers created:
-  * Create deployment
-  * Show pods created.  Use port-forward to demo that pod is listening
-  * Create service for all three "applications"
-  * Create an ingress to expose front end
-  * Demo fully operational app
-  * Demo deleted a pod, and deployment recreating
+<aside class="notes">
+  One of the keys to understanding Microservice architecture...and k8s overall
+  #3: Store configs in environment
+  #6: Stateless processes
+  #9: Disposability
 </aside>
 
 <!--v-->
@@ -302,8 +313,6 @@ Your app just needs to worry about it's function.  Separate functions can be con
 * TLS Termination
 * Authentication
 * Metrics, Logging, Health Checks
-
-
 
 <aside class="notes">
   Time: 5 min

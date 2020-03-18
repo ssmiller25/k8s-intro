@@ -158,7 +158,7 @@ Kubernetes constructs:
 * Service: Exposes pod(s)
 * Ingress: More sophisticated way to expose an application
 
-<aside class="notes>
+<aside class="notes">
   With all three containers created:
   * Create deployment
   * Show pods created.  Use port-forward to demo that pod is listening

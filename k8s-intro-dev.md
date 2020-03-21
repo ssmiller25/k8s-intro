@@ -161,11 +161,28 @@ Kubernetes constructs:
 <aside class="notes">
   With all three containers created:
   * Create deployment
+
+```sh
+    kubectl create deployment k8s-intro --image ssmiller25/k8s-intro
+```
   * Show pods created.  Use port-forward to demo that pod is listening
-  * Create service for all three "applications"
+  * Create a service
+
+```sh
+kubectl expose deployment/k8s-intro --port 1948
+```
+
   * Create an ingress to expose front end
+
+```sh
+kubectl apply -f deploy-manual/ingress.yaml
+```
+
   * Demo fully operational app
-  * Demo deleted a pod, and deployment recreating
+  * Deleted a pod, and watch recreation recreating
+
+Can see https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#create for everthing support by create command
+
 </aside>
 
 

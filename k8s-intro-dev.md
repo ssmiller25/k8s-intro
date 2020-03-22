@@ -105,7 +105,9 @@ COPY k8s-intro-dev.md /slides/
 EXPOSE 1948
 ```
 
-From <https://github.com/ssmiller25/k8s-intro/blob/master/Dockerfile>
+From [Dockerfile in k8s-intro](https://github.com/ssmiller25/k8s-intro/blob/master/Dockerfile)
+
+[Layers from DockerHub](https://hub.docker.com/layers/ssmiller25/k8s-intro/latest/images/sha256-7e3d3912346c929b7d9963e8f72d8f7aa74ba5ef8ea69d1cf02b4cab925f156d?context=repo)
 
 
 <aside class="notes">
@@ -230,7 +232,7 @@ ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
 Full Repo: <https://github.com/ssmiller25/oreilly-docker-java-shopping>
 
 <aside class="notes">
-  TODO: Slightly modified with Maven build, as well as layered containers.
+  Modified from original repo (compare k8s-intro branch with master)
 
   Additional Lines
   * FROM ... AS : Allow reference for multi-stage build
@@ -381,6 +383,7 @@ Time: 5 min, including solutions
   * https://kubesail.com/  1 Core of CPU, 512MB of RAM, 100MB of storage and 1 domain
   * https://k8spin.cloud/  100 mCore of CPU, 128MB of RAM.
   * https://okteto.com/  Three namespaces, each with 8GB of RAM, 4 CPUs and 150GB Disk space.
+* [Civo Kube100 Beta](https://www.civo.com/kube100)  Small provider, out from UK.  Free-ish for now ($70/month credit on k8s)
 
 <aside class="notes">
   * GKE not bad, assuming you use preemtable instances...and DON'T use their load balancer/ingress that will run $20/month
@@ -388,6 +391,7 @@ Time: 5 min, including solutions
     * kubesail.com: Seems solid., two level upgrade path ($7/month, and a $25/month)
     * k8spin.cloud: Super easy entry (can tie to Github account).  Although console was unavailable at times
     * okteto.com: Also super-easy setup.  Although generous resources, no upgrade path without going on-prep
+  * Civo:  VERY beta, but free for the moment.  Really build on k3s, but compatible with MOST kubernetes 
 </aside>
 
 <!--s-->

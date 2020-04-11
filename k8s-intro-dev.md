@@ -396,6 +396,18 @@ Time: 5 min, including solutions
 
 <!--s-->
 
+## Future Application Deployment Prospects
+
+- [Kf](https://github.com/google/kf): Like Cloud Foundry, but on Kubernetes
+
+- [Rio](https://github.com/rancher/rio): Application Deployment Engine for Kubernetes
+
+- [OpenFaas](https://github.com/openfaas/faas) or [Knative](https://github.com/knative)
+
+
+
+<!--s-->
+
 ## Thank You
 
 <https://www.github.com/ssmiller25/k8s-intro>

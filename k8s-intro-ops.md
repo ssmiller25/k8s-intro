@@ -367,10 +367,18 @@ Time: 5 min, including solutions
 
 ## Maintaining Kubernetes
 
+* Kubernetes Deployment
+  * Hosted Cloud: EKS (Amazon), AKS (Microsoft), GKE (Google)
+  * Hybred: kubeadm, Rancher, Tanzu 
+  * On-Prem: kubeadm, Rancher, Tanzu 
 * Promethus/Grafana
 * Kubernetes Dashboard
+  
 
 <aside class="notes">
+  <https://siliconangle.com/2020/03/10/vmware-embraces-kubernetes-biggest-product-blitz-decade/> : VMware and Tanzu
+
+
   Note the security in default dashboard deployment.  Be CAREFUL if you override:  https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
 </aside>
 

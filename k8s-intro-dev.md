@@ -249,6 +249,8 @@ Full Repo: <https://github.com/ssmiller25/oreilly-docker-java-shopping>
 Not required, but super helpful
 [https://12factor.net/](https://12factor.net/)
 
+[Software Erosion](https://blog.heroku.com/the_new_heroku_4_erosion_resistance_explicit_contracts)
+
 <aside class="notes">
   One of the keys to understanding Microservice architecture...and k8s overall
   #3: Store configs in environment
@@ -433,6 +435,7 @@ Time: 5 min, including solutions
 * gRPC
 * ArgoCD or Tekton Pipelines
 * Flux
+* [Ambassador and othe API Gateways](https://hackernoon.com/deploying-java-applications-with-kubernetes-and-an-api-gateway-fc471644bea7) - Also uses Java Shopfront as example
 
 <!--v-->
 

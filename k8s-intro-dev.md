@@ -153,6 +153,8 @@ Also see https://github.com/ssmiller25/k8s-intro/blob/master/Makefile
 
 ## Essential Components in Kubernetes
 
+Yaml knowledge useful - used to describe most manifests
+
 Kubernetes constructs:
 
 * Pod

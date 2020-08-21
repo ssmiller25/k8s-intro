@@ -34,7 +34,13 @@ spec:
         # Had to add ports
         ports:
         - containerPort: 1948
-        resources: {}
+        resources: 
+          limits:
+            cpu: "500m"
+            memory: "128Mi"
+          requests:
+            cpu: "50m"
+            memory: "64Mi"
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
       dnsPolicy: ClusterFirst

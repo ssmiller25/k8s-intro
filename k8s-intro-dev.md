@@ -385,7 +385,6 @@ Time: 5 min, including solutions
 * Big Cloud Providers( **Google Cloud GKE**, AWS EKS, Azure AKS)
 * From https://free-for.dev/ (Below are Kubernetes Namespace as a Service)
   * https://kubesail.com/  1 Core of CPU, 512MB of RAM, 100MB of storage and 1 domain
-  * https://k8spin.cloud/  100 mCore of CPU, 128MB of RAM.
   * https://okteto.com/  Three namespaces, each with 8GB of RAM, 4 CPUs and 150GB Disk space.
 * [Civo Kube100 Beta](https://www.civo.com/kube100)  Small provider, out from UK.  Free-ish for now ($70/month credit on k8s)
 

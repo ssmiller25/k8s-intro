@@ -428,6 +428,7 @@ Time: 5 min, including solutions
 ## Resources - CKA Exam
 
 * CKA Exam
+  * [Great tips for the CKA Exam](https://medium.com/@emreodabas_20110/best-practices-for-cka-exam-9c1e51ea9b29)
   * https://www.contino.io/insights/the-ultimate-guide-to-passing-the-cka-exam 
   * https://github.com/cncf/curriculum
   * https://www.katacoda.com/courses/kubernetes/playground 

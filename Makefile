@@ -1,14 +1,14 @@
 currentepoch := $(shell date +%s)
-latestepoch := $(shell docker image ls | grep k8s-intro | grep -v latest | awk ' { print $$2; } ' | sort -n | tail -n 1)
+latestepoch := $(shell docker image ls | grep present | grep -v latest | awk ' { print $$2; } ' | sort -n | tail -n 1)
 
 
-DOCKER_REPO="ssmiller25"
+DOCKER_REPO="quay.io/ssmiller25"
 
 CIVO_CMD="civo"
 # For Dockerize CIVO
 #CIVO_CMD=docker run -it --rm -v /home/steve/.civo.json:/.civo.json civo/cli:latest
 
-CLUSTER_NAME=k8s-intro
+CLUSTER_NAME=present
 CIVO_SIZE=g2.small
 KUBECONFIG=kubeconfig.$(CLUSTER_NAME)
 KUBECTL=kubectl --kubeconfig=$(KUBECONFIG)
@@ -16,17 +16,17 @@ KUBECTL=kubectl --kubeconfig=$(KUBECONFIG)
 
 .PHONY: build
 build:
-	docker build . -t $(DOCKER_REPO)/k8s-intro:${currentepoch}
-	docker tag $(DOCKER_REPO)/k8s-intro:${currentepoch} $(DOCKER_REPO)/k8s-intro:latest
+	docker build . -t $(DOCKER_REPO)/present:${currentepoch}
+	docker tag $(DOCKER_REPO)/present:${currentepoch} $(DOCKER_REPO)/present:latest
 
 .PHONY: run
 run:
-	docker run -d --rm -p 1948:1948 $(DOCKER_REPO)/k8s-intro:latest
+	docker run -d --rm -p 1948:1948 $(DOCKER_REPO)/present:latest
 
 .PHONY: push
 push:
-	docker push $(DOCKER_REPO)/k8s-intro:$(latestepoch)
-	docker push $(DOCKER_REPO)/k8s-intro:latest
+	docker push $(DOCKER_REPO)/present:$(latestepoch)
+	docker push $(DOCKER_REPO)/present:latest
 
 .PHONY: livedev
 livedev:

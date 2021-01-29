@@ -1,10 +1,10 @@
 
 git_hash = $(shell git rev-parse --short -q HEAD)
-version := "0.9.0"
+version := 0.9.0
 release_date := $(shell date +%Y-%m-%d)
 
 
-DOCKER_REPO="quay.io/ssmiller25"
+DOCKER_REPO=quay.io/ssmiller25
 
 CIVO_CMD="civo"
 # For Dockerize CIVO

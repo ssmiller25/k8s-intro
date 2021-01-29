@@ -1,5 +1,7 @@
-currentepoch := $(shell date +%s)
-latestepoch := $(shell docker image ls | grep present | grep -v latest | awk ' { print $$2; } ' | sort -n | tail -n 1)
+
+git_hash = $(shell git rev-parse --short -q HEAD)
+version := "0.9.0"
+release_date := $(shell date +%Y-%m-%d)
 
 
 DOCKER_REPO="quay.io/ssmiller25"
@@ -16,8 +18,11 @@ KUBECTL=kubectl --kubeconfig=$(KUBECONFIG)
 
 .PHONY: build
 build:
-	docker build . -t $(DOCKER_REPO)/present:${currentepoch}
-	docker tag $(DOCKER_REPO)/present:${currentepoch} $(DOCKER_REPO)/present:latest
+	docker build . -t $(DOCKER_REPO)/present:${git_hash} \
+		--build-arg GIT_HASH=${git_hash} \
+		--build-arg VERSION=${version} \
+		--build-arg RELEASE_DATE=${release_date}
+	docker tag $(DOCKER_REPO)/present:${git_hash} $(DOCKER_REPO)/present:latest
 
 .PHONY: run
 run:
@@ -25,7 +30,7 @@ run:
 
 .PHONY: push
 push:
-	docker push $(DOCKER_REPO)/present:$(latestepoch)
+	docker push $(DOCKER_REPO)/present:$(git_hash)
 	docker push $(DOCKER_REPO)/present:latest
 
 .PHONY: livedev

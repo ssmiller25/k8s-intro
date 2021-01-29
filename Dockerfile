@@ -9,6 +9,7 @@ LABEL version="${VERSION}"
 LABEL git_hash="${GIT_HASH}"
 LABEL release-date="${RELEASE_DATE}"
 
+RUN rm -rf /slides/*
 COPY *.png /slides/
 COPY k8s-intro-dev.md /slides/
 COPY k8s-intro-ops.md /slides/

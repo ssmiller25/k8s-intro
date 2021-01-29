@@ -4,7 +4,7 @@ transition: "slide"
 highlightTheme: "monokai"
 logoImg: "logo.png"
 slideNumber: true
-title: "VSCode Reveal intro"
+title: "Introduction to Kubernetes - Ops Focused"
 separator: <!--s-->
 verticalSeparator: <!--v-->
 revealOptions:

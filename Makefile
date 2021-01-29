@@ -32,6 +32,12 @@ push:
 livedev:
 	docker run -d --rm -p 1948:1948 -v $(PWD):/slides webpronl/reveal-md:latest
 
+# Pull and cache dependent images
+.PHONY: cache-upstream
+cache-upstream:
+	docker pull webpronl/reveal-md:latest
+	docker tag webpronl/reveal-md:latest $(DOCKER_REPO)/reveal-md:latest
+	docker push $(DOCKER_REPO)/reveal-md:latest
 
 .PHONY: civo-up
 civo-up: $(KUBECONFIG)

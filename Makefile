@@ -35,7 +35,11 @@ push:
 
 .PHONY: livedev
 livedev:
-	docker run -d --rm -p 1948:1948 -v $(PWD):/slides webpronl/reveal-md:latest
+	docker run -d --rm -p 1948:1948 -v $(PWD):/slides quay.io/ssmiller25/reveal-md:latest
+
+.PHONY: imagedev
+imagedev:
+	docker run -d --rm -p 1948:1948 $(DOCKER_REPO)/present:latest
 
 # Pull and cache dependent images
 .PHONY: cache-upstream

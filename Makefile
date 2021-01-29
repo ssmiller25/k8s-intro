@@ -1,8 +1,10 @@
-currentepoch := $(shell date +%s)
-latestepoch := $(shell docker image ls | grep present | grep -v latest | awk ' { print $$2; } ' | sort -n | tail -n 1)
+
+git_hash = $(shell git rev-parse --short -q HEAD)
+version := 0.9.0
+release_date := $(shell date +%Y-%m-%d)
 
 
-DOCKER_REPO="quay.io/ssmiller25"
+DOCKER_REPO=quay.io/ssmiller25
 
 CIVO_CMD="civo"
 # For Dockerize CIVO
@@ -16,8 +18,11 @@ KUBECTL=kubectl --kubeconfig=$(KUBECONFIG)
 
 .PHONY: build
 build:
-	docker build . -t $(DOCKER_REPO)/present:${currentepoch}
-	docker tag $(DOCKER_REPO)/present:${currentepoch} $(DOCKER_REPO)/present:latest
+	docker build . -t $(DOCKER_REPO)/present:${git_hash} \
+		--build-arg GIT_HASH=${git_hash} \
+		--build-arg VERSION=${version} \
+		--build-arg RELEASE_DATE=${release_date}
+	docker tag $(DOCKER_REPO)/present:${git_hash} $(DOCKER_REPO)/present:latest
 
 .PHONY: run
 run:
@@ -25,13 +30,23 @@ run:
 
 .PHONY: push
 push:
-	docker push $(DOCKER_REPO)/present:$(latestepoch)
+	docker push $(DOCKER_REPO)/present:$(git_hash)
 	docker push $(DOCKER_REPO)/present:latest
 
 .PHONY: livedev
 livedev:
-	docker run -d --rm -p 1948:1948 -v $(PWD):/slides webpronl/reveal-md:latest
+	docker run -d --rm -p 1948:1948 -v $(PWD):/slides quay.io/ssmiller25/reveal-md:latest
 
+.PHONY: imagedev
+imagedev:
+	docker run -d --rm -p 1948:1948 $(DOCKER_REPO)/present:latest
+
+# Pull and cache dependent images
+.PHONY: cache-upstream
+cache-upstream:
+	docker pull webpronl/reveal-md:latest
+	docker tag webpronl/reveal-md:latest $(DOCKER_REPO)/reveal-md:latest
+	docker push $(DOCKER_REPO)/reveal-md:latest
 
 .PHONY: civo-up
 civo-up: $(KUBECONFIG)

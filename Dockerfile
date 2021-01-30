@@ -4,7 +4,7 @@ FROM quay.io/ssmiller25/reveal-md:latest
 ARG GIT_HASH
 ARG VERSION
 ARG RELEASE_DATE
-LABEL maintaner="Steve Miller <me@r15cookie.com>"
+LABEL maintainer="Steve Miller <me@r15cookie.com>"
 LABEL version="${VERSION}"
 LABEL git_hash="${GIT_HASH}"
 LABEL release-date="${RELEASE_DATE}"

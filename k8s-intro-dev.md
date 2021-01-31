@@ -413,7 +413,7 @@ Time: 5 min, including solutions
 
 ## Thank You
 
-<https://www.github.com/ssmiller25/k8s-intro>
+<https://www.github.com/ssmiller25/present>
 
 <https://www.r15cookie.com>
 
@@ -458,6 +458,7 @@ Memory
 ## Resources - CKA Exam
 
 * CKA Exam
+  * [My experience passing CKA and CKAD](https://blog.cuffaro.com/blog/2021/01/24/cka-ckad)
   * https://www.contino.io/insights/the-ultimate-guide-to-passing-the-cka-exam 
   * https://github.com/cncf/curriculum
   * https://www.katacoda.com/courses/kubernetes/playground 

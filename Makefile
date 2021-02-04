@@ -25,7 +25,9 @@ build:
 
 .PHONY: run
 run:
-	docker run -d --rm -p 1948:1948 $(DOCKER_REPO)/present:${git_hash} 
+	#docker run -d --rm -p 1948:1948 $(DOCKER_REPO)/present:${git_hash} --listing-template template/index.html
+	docker run -p 1948:1948 $(DOCKER_REPO)/present:${git_hash} presentation/*.md --listing-template template/index.html
+
 
 .PHONY: push
 push:
@@ -35,11 +37,11 @@ push:
 
 .PHONY: livedev
 livedev:
-	docker run -d --rm -p 1948:1948 -v $(PWD):/slides quay.io/ssmiller25/reveal-md:${git_hash} --listing-template template/index.html
+	docker run -d --rm -p 1948:1948 -v $(PWD):/slides quay.io/ssmiller25/reveal-md:latest --listing-template template/index.html
 
 .PHONY: imagedev
 imagedev:
-	docker run -d --rm -p 1948:1948 $(DOCKER_REPO)/present:${git_hash}
+	docker run -d --rm -p 1948:1948 $(DOCKER_REPO)/present:${git_hash} --listing-template template/index.html
 
 # Pull and cache dependent images
 .PHONY: cache-upstream

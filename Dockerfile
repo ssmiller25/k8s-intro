@@ -9,7 +9,7 @@ LABEL version="${VERSION}"
 LABEL git_hash="${GIT_HASH}"
 LABEL release-date="${RELEASE_DATE}"
 
-COPY template/ /slides/
+COPY template/ /slides/template/
 COPY presentations/. /slides/
 
 EXPOSE 1948

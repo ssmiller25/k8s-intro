@@ -26,7 +26,7 @@ build:
 .PHONY: run
 run:
 	#docker run -d --rm -p 1948:1948 $(DOCKER_REPO)/present:${git_hash} --listing-template template/index.html
-	docker run -p 1948:1948 $(DOCKER_REPO)/present:${git_hash} /slides --listing-template /template/index.html
+	docker run --rm -p 1948:1948 $(DOCKER_REPO)/present:${git_hash} /slides --listing-template /template/index.html
 
 
 .PHONY: push

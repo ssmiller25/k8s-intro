@@ -26,7 +26,7 @@ build:
 .PHONY: run
 run:
 	#docker run -d --rm -p 1948:1948 $(DOCKER_REPO)/present:${git_hash} --listing-template template/index.html
-	docker run -p 1948:1948 $(DOCKER_REPO)/present:${git_hash} *.md --listing-template /template/index.html
+	docker run -p 1948:1948 $(DOCKER_REPO)/present:${git_hash} /slides --listing-template /template/index.html
 
 
 .PHONY: push
@@ -37,7 +37,7 @@ push:
 
 .PHONY: livedev
 livedev:
-	docker run -d --rm -p 1948:1948 -v $(PWD):/slides quay.io/ssmiller25/reveal-md:latest --listing-template /template/index.html
+	docker run -d --rm -p 1948:1948 -v $(PWD)/presentations:/slides quay.io/ssmiller25/reveal-md:latest /slides --listing-template /template/index.html
 
 .PHONY: imagedev
 imagedev:

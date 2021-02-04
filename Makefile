@@ -22,24 +22,24 @@ build:
 		--build-arg GIT_HASH=${git_hash} \
 		--build-arg VERSION=${version} \
 		--build-arg RELEASE_DATE=${release_date}
-	docker tag $(DOCKER_REPO)/present:${git_hash} $(DOCKER_REPO)/present:latest
 
 .PHONY: run
 run:
-	docker run -d --rm -p 1948:1948 $(DOCKER_REPO)/present:latest
+	docker run -d --rm -p 1948:1948 $(DOCKER_REPO)/present:${git_hash} 
 
 .PHONY: push
 push:
+	docker tag $(DOCKER_REPO)/present:${git_hash} $(DOCKER_REPO)/present:latest
 	docker push $(DOCKER_REPO)/present:$(git_hash)
 	docker push $(DOCKER_REPO)/present:latest
 
 .PHONY: livedev
 livedev:
-	docker run -d --rm -p 1948:1948 -v $(PWD):/slides quay.io/ssmiller25/reveal-md:latest
+	docker run -d --rm -p 1948:1948 -v $(PWD):/slides quay.io/ssmiller25/reveal-md:${git_hash} --listing-template template/index.html
 
 .PHONY: imagedev
 imagedev:
-	docker run -d --rm -p 1948:1948 $(DOCKER_REPO)/present:latest
+	docker run -d --rm -p 1948:1948 $(DOCKER_REPO)/present:${git_hash}
 
 # Pull and cache dependent images
 .PHONY: cache-upstream

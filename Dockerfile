@@ -9,7 +9,8 @@ LABEL version="${VERSION}"
 LABEL git_hash="${GIT_HASH}"
 LABEL release-date="${RELEASE_DATE}"
 
-COPY presentation/* /slides/
+COPY presentation/. /slides/
+COPY template/ /
 
 EXPOSE 1948
 

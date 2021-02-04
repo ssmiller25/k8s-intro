@@ -2,6 +2,7 @@
 git_hash = $(shell git rev-parse --short -q HEAD)
 version := 0.9.0
 release_date := $(shell date +%Y-%m-%d)
+run_flags := /slides --listing-template template/index.html
 
 
 DOCKER_REPO=quay.io/ssmiller25
@@ -26,7 +27,7 @@ build:
 .PHONY: run
 run:
 	#docker run -d --rm -p 1948:1948 $(DOCKER_REPO)/present:${git_hash} --listing-template template/index.html
-	docker run --rm -p 1948:1948 $(DOCKER_REPO)/present:${git_hash} /slides --listing-template template/index.html
+	docker run --rm -p 1948:1948 $(DOCKER_REPO)/present:${git_hash} ${run_flags}
 
 
 .PHONY: push
@@ -37,11 +38,11 @@ push:
 
 .PHONY: livedev
 livedev:
-	docker run -d --rm -p 1948:1948 -v $(PWD)/presentations:/slides quay.io/ssmiller25/reveal-md:latest /slides --listing-template template/index.html
+	docker run -d --rm -p 1948:1948 -v $(PWD)/presentations:/slides quay.io/ssmiller25/reveal-md:latest ${run_flags}
 
 .PHONY: imagedev
 imagedev:
-	docker run -d --rm -p 1948:1948 $(DOCKER_REPO)/present:${git_hash} --listing-template template/index.html
+	docker run -d --rm -p 1948:1948 $(DOCKER_REPO)/present:${git_hash} ${run_flags}
 
 # Pull and cache dependent images
 .PHONY: cache-upstream

@@ -5,7 +5,7 @@ highlightTheme: "monokai"
 logoImg: "logo.png"
 slideNumber: true
 title: "Introduction to Kubernetes - Dev Focused"
-description: "A hands on introduction to Kubernetes.  Focused on the developer experience, specifically in Java"
+description: "Kubernetes has been getting a lot of attention in the past few years. But what is Kubernetes, and why should I care? A brief overview of Kubernetes and Microservice architecture will be discussed, followed by a hands-on demonstration of application development and deployment in a Kubernetes environment."
 last-updated: "Aug 21, 2020"
 separator: <!--s-->
 verticalSeparator: <!--v-->

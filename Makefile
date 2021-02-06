@@ -3,6 +3,7 @@ git_hash = $(shell git rev-parse --short -q HEAD)
 version := 0.9.0
 release_date := $(shell date +%Y-%m-%d)
 run_flags := /slides --listing-template template/index.html
+reveal_version := 5.0.0
 
 
 DOCKER_REPO=quay.io/ssmiller25
@@ -22,7 +23,8 @@ build:
 	docker build . -t $(DOCKER_REPO)/present:${git_hash} \
 		--build-arg GIT_HASH=${git_hash} \
 		--build-arg VERSION=${version} \
-		--build-arg RELEASE_DATE=${release_date}
+		--build-arg RELEASE_DATE=${release_date} \
+		--build-arg REVEAL_VERSION=${reveal_version}
 
 .PHONY: run
 run: stop
@@ -45,15 +47,15 @@ imagedev: stop
 .PHONY: stop
 stop:
 	@docker stop present || true
-	# Have to give docker a few seconds to actually delete the container once stopped
-	@sleep 2
+# Have to give docker a few seconds to actually delete the container once stopped
+	@sleep 4
 
 # Pull and cache dependent images
 .PHONY: cache-upstream
 cache-upstream:
-	docker pull webpronl/reveal-md:latest
-	docker tag webpronl/reveal-md:latest $(DOCKER_REPO)/reveal-md:latest
-	docker push $(DOCKER_REPO)/reveal-md:latest
+	docker pull webpronl/reveal-md:${reveal_version}
+	docker tag webpronl/reveal-md:${reveal_version} $(DOCKER_REPO)/reveal-md:${reveal_version}
+	docker push $(DOCKER_REPO)/reveal-md:${reveal_version}
 
 .PHONY: civo-up
 civo-up: $(KUBECONFIG)

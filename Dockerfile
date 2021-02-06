@@ -1,8 +1,9 @@
-FROM quay.io/ssmiller25/reveal-md:latest
-
 ARG GIT_HASH
 ARG VERSION
 ARG RELEASE_DATE
+ARG REVEAL_VERSION
+
+FROM quay.io/ssmiller25/reveal-md:${REVEAL_VERSION}
 
 
 COPY css/ /slides/css/

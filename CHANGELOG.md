@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0] - 2021-02-06
+
+- Better index page - thematically aligned with <https://www.r15cookie.com>
+- Better support for multiple presentations.
+- Build improvements.
+- Adding license
+
 ## [0.9.0] - 2021-01-29
 
 - Initial commit, just K8S presentations and very basic index page 

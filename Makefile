@@ -1,6 +1,6 @@
 
 git_hash = $(shell git rev-parse --short -q HEAD)
-version := 0.9.0
+version := 1.0.0
 release_date := $(shell date +%Y-%m-%d)
 run_flags := /slides --listing-template template/index.html
 reveal_version := 5.0.0
@@ -32,6 +32,7 @@ run: stop
 
 .PHONY: push
 push:
+	docker tag $(DOCKER_REPO)/present:${git_hash} $(DOCKER_REPO)/present:${version}
 	docker tag $(DOCKER_REPO)/present:${git_hash} $(DOCKER_REPO)/present:latest
 	docker push $(DOCKER_REPO)/present:$(git_hash)
 	docker push $(DOCKER_REPO)/present:latest

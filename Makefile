@@ -45,6 +45,8 @@ imagedev: stop
 .PHONY: stop
 stop:
 	@docker stop present || true
+	# Have to give docker a few seconds to actually delete the container once stopped
+	@sleep 2
 
 # Pull and cache dependent images
 .PHONY: cache-upstream

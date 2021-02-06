@@ -68,9 +68,14 @@
 <ul>
   {{#files}}
   <li>
+    <h1>
     <a href="{{filePath}}" title="{{title}}">
-      {{#title}}{{.}} ({{filePath}}){{/title}}{{^title}}{{filePath}}{{/title}}
+      {{#title}}{{.}} 
     </a>
+    </h1>
+    <p>  
+      {{filePath}}{{/title}}{{^title}}{{filePath}}{{/title}}
+    </p>
   </li>
   {{/files}}
 </ul>

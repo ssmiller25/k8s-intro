@@ -2,6 +2,7 @@
 git_hash = $(shell git rev-parse --short -q HEAD)
 version := 0.9.0
 release_date := $(shell date +%Y-%m-%d)
+run_flags := /slides --listing-template template/index.html
 
 
 DOCKER_REPO=quay.io/ssmiller25
@@ -22,24 +23,30 @@ build:
 		--build-arg GIT_HASH=${git_hash} \
 		--build-arg VERSION=${version} \
 		--build-arg RELEASE_DATE=${release_date}
-	docker tag $(DOCKER_REPO)/present:${git_hash} $(DOCKER_REPO)/present:latest
 
 .PHONY: run
-run:
-	docker run -d --rm -p 1948:1948 $(DOCKER_REPO)/present:latest
+run: stop
+	docker run -d --rm -p 1948:1948 --name present $(DOCKER_REPO)/present:${git_hash} ${run_flags}
 
 .PHONY: push
 push:
+	docker tag $(DOCKER_REPO)/present:${git_hash} $(DOCKER_REPO)/present:latest
 	docker push $(DOCKER_REPO)/present:$(git_hash)
 	docker push $(DOCKER_REPO)/present:latest
 
 .PHONY: livedev
-livedev:
-	docker run -d --rm -p 1948:1948 -v $(PWD):/slides quay.io/ssmiller25/reveal-md:latest
+livedev: stop
+	docker run -d --rm --name present -p 1948:1948 -v $(PWD)/presentations:/slides quay.io/ssmiller25/reveal-md:latest ${run_flags}
 
 .PHONY: imagedev
-imagedev:
-	docker run -d --rm -p 1948:1948 $(DOCKER_REPO)/present:latest
+imagedev: stop
+	docker run -d --rm --name present -p 1948:1948 $(DOCKER_REPO)/present:${git_hash} ${run_flags}
+
+.PHONY: stop
+stop:
+	@docker stop present || true
+	# Have to give docker a few seconds to actually delete the container once stopped
+	@sleep 2
 
 # Pull and cache dependent images
 .PHONY: cache-upstream

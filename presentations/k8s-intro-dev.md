@@ -5,6 +5,8 @@ highlightTheme: "monokai"
 logoImg: "logo.png"
 slideNumber: true
 title: "Introduction to Kubernetes - Dev Focused"
+description: "A hands on introduction to Kubernetes.  Focused on the developer experience, specifically in Java"
+last-updated: "Aug 21, 2020"
 separator: <!--s-->
 verticalSeparator: <!--v-->
 revealOptions:

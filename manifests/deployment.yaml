@@ -6,16 +6,16 @@ metadata:
   creationTimestamp: null
   generation: 1
   labels:
-    app: k8s-intro
-  name: k8s-intro
-  selfLink: /apis/apps/v1/namespaces/default/deployments/k8s-intro
+    app: present
+  name: present
+  selfLink: /apis/apps/v1/namespaces/default/deployments/present
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app: k8s-intro
+      app: present
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -25,13 +25,12 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: k8s-intro
+        app: present
     spec:
       containers:
-      - image: ssmiller25/k8s-intro
+      - image: quay.io/ssmiller25/present
         imagePullPolicy: Always
-        name: k8s-intro
-        # Had to add ports
+        name: present
         ports:
         - containerPort: 1948
         resources: 

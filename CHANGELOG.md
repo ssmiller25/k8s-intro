@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2021-02-06
 
-- Better index page - thematically aligned with https://www.r15cookie.com
+- Better index page - thematically aligned with <https://www.r15cookie.com>
 - Better support for multiple presentations.
 - Build improvements.
 - Adding license

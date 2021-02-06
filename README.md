@@ -1,6 +1,6 @@
-# Steve Miller Preentations
+# Steve Miller Presentations
 
-Presentations created ando/or given by [Steve Miller](https://www.r15cookie.com/about/)  All done with [reveal.js](https://revealjs.com/) with markdown source material.
+Presentations created  by [Steve Miller](https://www.r15cookie.com/about/)  All done with [reveal.js](https://revealjs.com/) with markdown source material.
 
 ## Usage
 

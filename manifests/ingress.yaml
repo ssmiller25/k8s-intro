@@ -7,7 +7,7 @@ spec:
   - http:
       paths:
       - backend:
-          serviceName: k8s-intro
+          serviceName: present
           servicePort: 1948
         path: /
 status:

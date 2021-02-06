@@ -3,14 +3,14 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: k8s-intro
-  name: k8s-intro
+    app: present
+  name: present
 spec:
   ports:
   - port: 1948
     protocol: TCP
     targetPort: 1948
   selector:
-    app: k8s-intro
+    app: present
   sessionAffinity: None
   type: ClusterIP

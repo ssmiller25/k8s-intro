@@ -5,6 +5,8 @@ highlightTheme: "monokai"
 logoImg: "logo.png"
 slideNumber: true
 title: "Incorporating Development Practices in Operations"
+description: "The pace of change in today's modern technology landscape can make meeting business expectations difficult.   Various tools and processes will be presented to help increase the ability for operations to meet those expectations while also maintaining availability and compliance targets."
+last-updated: "Feb 6, 2021 - In progress"
 separator: <!--s-->
 verticalSeparator: <!--v-->
 revealOptions:

@@ -6,7 +6,7 @@ logoImg: "logo.png"
 slideNumber: true
 title: "Introduction to Kubernetes - Dev Focused"
 description: "A hands on introduction to Kubernetes.  Focused on the developer experience, specifically in Java"
-last-upated: 2020-08-21
+last-updated: 2020-08-21
 separator: <!--s-->
 verticalSeparator: <!--v-->
 revealOptions:

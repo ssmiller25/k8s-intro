@@ -6,7 +6,7 @@ logoImg: "logo.png"
 slideNumber: true
 title: "Introduction to Kubernetes - Ops Focused"
 description: "A hands on introduction to Kubernetes.  Focused on the operational aspects of running a Kubernetes cluster."
-last-upated: 2020-08-21
+last-updated: 2020-08-21
 separator: <!--s-->
 verticalSeparator: <!--v-->
 revealOptions:

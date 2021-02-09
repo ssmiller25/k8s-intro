@@ -32,9 +32,10 @@ GOAL: 30 minutes presentation, with 15-30 minute Q&A
 
 ## Goal
 
-How can operations leverage useful tools and techniques from development groups to become more Agile
+Make operations more efficent by leveraging development tools and techniques.
 
 <aside class="notes">
+  - Notice not calling this "DevOps".  A far larger topic that generally involves having a far deeper connection between operatiosn and production.
   - Survey
     - How would you describe your team or position:
       - Ops Focused (Sysadmin, etc.)
@@ -46,10 +47,36 @@ How can operations leverage useful tools and techniques from development groups 
       - Windows
       - Docker
   - Focus on Agility.  HOw to become "cloud-like" without necessarily leveraging cloud
-  - Notice not calling this "DevOps".  A far larger topic that generally involves having a far deeper connection between operatiosn and production.
+
 </aside>
 
 <!--s-->
+
+## Selling the benefit, and address the concerns
+
+- Benefits
+  - Repeatability
+  - Documentation
+  - True history of changes - including authorship
+  - Peer approval workflow
+  - Auditability
+- Concerns
+  - "In a down situation, this may slow me down"
+  - "I don't want to be a programmer"
+
+<aside class="notes">
+
+- Benefits
+- "In an emergency, I just want to change a setting to fix something": 
+  - That's ok, but how do we remember why that setting was changed in future years.   Even if put into a change management system, searching for it can be difficult
+- "I don't want to be a programmer"
+  - We work in IT, whose overall goal is to make our business more efficient by making processes more efficient and less manual.   We need to embrace that internally. 
+    - And you don't need to be a full programmer
+
+</aside>
+
+<!--s-->
+
 
 ## Step 0: Scripts
 
@@ -147,20 +174,6 @@ HANDON: Gitlab Actions walkthrough
 
 </aside>
 
-<!--s-->
-
-- "In an emergency, I just want to change a setting to fix something"
-- "I don't want to be a programmer"
-
-<aside class="notes">
-
-- "In an emergency, I just want to change a setting to fix something": 
-  - That's ok, but how do we remember why that setting was changed in future years.   Even if put into a change management system, searching for it can be difficult
-- "I don't want to be a programmer" 
-  - We work in IT, whose overall goal is to make our business more efficient by making processes more efficient and less manual.   We need to embrace that internally. 
-    - And you don't need to be a full programmer
-
-</aside>
 
 
 <!--s-->

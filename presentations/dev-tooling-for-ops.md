@@ -35,17 +35,17 @@ Make operations more efficent by leveraging development tools and techniques.
 
 <aside class="notes">
   - Notice not calling this "DevOps".  A far larger topic that generally involves having a far deeper connection between operatiosn and production.
+    - Focus on Agility.  HOw to become "cloud-like" without necessarily leveraging cloud
   - Survey
     - How would you describe your team or position:
       - Ops Focused (Sysadmin, etc.)
-      - Dev Focused
+      - Dev Focused (Software Engineer, etc. )
       - DevOps (Full Stack, Site Reliability, Devops)
     - OS Platforms:
       - Linux
       - *nix
       - Windows
       - Docker
-  - Focus on Agility.  HOw to become "cloud-like" without necessarily leveraging cloud
 
 </aside>
 
@@ -74,59 +74,73 @@ Make operations more efficent by leveraging development tools and techniques.
 
 </aside>
 
+<!--v-->
+
+## Selling the benefit, and address the concerns
+
+Work within your environment
+
+<aside class="notes">
+
+- Although not focusing on Devops, reach out to your developers, and see if you can align with their tooling and methodology
+  - Code editor(s)
+  - Version Control
+  - Pipelines
+- But do **not** if it does not line up with your goals
+
+</notes>
+
+<!--v-->
+
+## Selling the benefit, and address the concerns
+
+Don't try to "boil the ocean"
+
+<aside class="notes">
+There are a lot of opportunity, but don't let that impeed you from taking more immediate action.  Better to take an Agile approach overall versus waterfall
+</aside>
+
 <!--s-->
 
 
-## Step 0: Scripts
+## Step 1: Scripts
 
-Scripts and/or configuration tools:
+- Might already have them
+- Or look for areas of "toil" that could be improved
+  - Manual
+  - Repetitve
+  - Automatable
+
+<aside class="notes">
+
+- Scripts - but don't have to be too complex
+  - Might already have these in place - in that case, work from those scripts that you are already using
+  - More common in Linux environments, but Windows shops may have quite a collection of powershell as well
+- Toil, as defined by Googe:  <https://sre.google/sre-book/eliminating-toil/>
+- Example areas
+  - Maintenance windows - probably common processes that are manually can be error prone due to human need
+  - Pagable events - is there a common "page" and a set of actions to resolve (look at X items and perform Y actions)
+
+</aside>
+
+<!--v-->
+
+## Step 1: Scripts
+
+Scripting Langauges
 
 - **Linux:** Shell/Python
 - **Windows:** Powershell
 
-
 <aside class="notes">
 
-Since we want to incorporate lanugaes/tools
-
-</aside>
-
-<!--v-->
-
-## Step 0: Configuration Management (Pet Servers)
-
-- Ansible
-- Salt
-- Chef
-- Puppet
-
-<aside class="notes">
-
-- Pet Servers: Built and kept for months/years
-- Order my opinion on configuration management tools
-- Very much my opinion - but prefer the light-weightness of Ansible.  Some work required in larger infrastructs to scale out to 100s/1000s of servers (if needed).  The easy of language/yaml makes up for this (IMHO)
-
-</aside>
-
-<!--v-->
-
-## Step 0: Cloud Management Tools (Cattle Servers)
-
-- Terraform or Pulumi
-
-
-<aside class="notes">
-
-- Cattle Servers: Build for a standard image, on demand
-- Generally used for cloud infrastructure, although most can assist with on-prem (VMWare) with some work
-- Terraform: FAR more popular, but a very unique "language" (HCL, not entirely Turning complete)
-- Pulumi: Leverage concepts from Terraform (state) but can express in a variety of languages (Node.js, Python, .Net Core, Go)
+Languages to focus on initially
 
 </aside>
 
 <!--s-->
 
-## Step 1: Version Control
+## Step 2: Version Control
 
 Manage that code properly.  For operations
 
@@ -139,37 +153,39 @@ Manage that code properly.  For operations
 Selling points
 
 - Infiniate backups.  Not just the .bak, .bak2 or .20210201 extenions
-
-
-HANDS ON: Github startout
+- Blame reports.  Every wonder how added a line..and why?
+- Peer review.  Actually force someone else to read your scripts.  Increases chances for catching mistakes
 
 </aside>
 
 <!--v-->
 
-## Step 1: IDE/editor
+## Step 2: Version Control
 
-- VScode
-- Hands On: 
+## IDE 
+
+- Not Required, but can make Version Control Adoption Easier
 
 <!--s-->
 
 <aside class="notes">
 
-HANS ON: VSCode pointed to Github
+HANDSON: VSCode and Github tutorial
+
 
 </aside>
 
 <!--s-->
 
-## Step 2: Pipelines for Your Scripts
+## Step 3: Pipelines for Your Scripts
 
-Implements your scripts
+- Testing The Scripts
+- Implementing The Scripts
 
 <aside class="notes">
 
 You have the scripts, now implement them
-HANDON: Gitlab Actions walkthrough
+HANDSON: Gitlab Actions walkthrough
 
 </aside>
 
@@ -182,13 +198,25 @@ HANDON: Gitlab Actions walkthrough
   - Uptime - more automation and repeatable processes
   - Documentation: source code itself, along with other artifact, can serve as an important 
 
-- Taking it Futher 
-  - Gitops
-  - Kubernetes
-  - Linting
-  - Test and Test Drivent development
+- Taking it Futher
+  - Infrastructure as Code (IaC)
+  - Configuration Management
+  - Gitops/Kubernetes
 
 <aside class="notes">
+
+- Iac Frameworks
+  - Useful for more cloud-based architectures
+  - Terraform (probably biggest)
+  - Pulumi
+- Configuration Management
+  - Useful for more traditional infrastructure.  In order of my perfernce
+    - Ansible
+    - Salt
+    - Chef
+    - Puppet
+- GitOps/Kubernetes
+  - More for Microservice styled architectures - but worthy of it's own discussion
 
 </aside>
 
@@ -206,3 +234,7 @@ HANDON: Gitlab Actions walkthrough
 
 - Ansible
   - [Redhat's Anible Quickstart Guide](https://www.redhat.com/sysadmin/ansible-quick-start)
+- Google SRE Books
+  - [Site Reliability Engineering](https://sre.google/sre-book/table-of-contents/)
+  - [Site Reliability Workbook](https://sre.google/workbook/table-of-contents/)
+  - [Building Reliable and Secure Systems (PDF)](https://static.googleusercontent.com/media/sre.google/en//static/pdf/building_secure_and_reliable_systems.pdf)

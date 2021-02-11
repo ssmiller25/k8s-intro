@@ -162,18 +162,25 @@ Selling points
 
 ## Step 2: Version Control
 
+Github - A good place to get started
+
+<aside class="notes">
+
+- HANDSON: VSCode and Github tutorial
+  - [Github Hellow Word](https://guides.github.com/activities/hello-world/)
+  - [Git Flow](https://guides.github.com/introduction/flow/)
+
+
+</aside>
+
+<!--v-->
+
+## Step 2: Version Control
+
 ## IDE 
 
 - Not Required, but can make Version Control Adoption Easier
 
-<!--s-->
-
-<aside class="notes">
-
-HANDSON: VSCode and Github tutorial
-
-
-</aside>
 
 <!--s-->
 
@@ -186,6 +193,8 @@ HANDSON: VSCode and Github tutorial
 
 You have the scripts, now implement them
 HANDSON: Gitlab Actions walkthrough
+
+[SuperLinter tutorial](https://docs.github.com/en/actions/quickstart)
 
 </aside>
 
@@ -234,6 +243,10 @@ HANDSON: Gitlab Actions walkthrough
 
 - Ansible
   - [Redhat's Anible Quickstart Guide](https://www.redhat.com/sysadmin/ansible-quick-start)
+- Github
+  - [Guides](https://guides.github.com/)
+  - [Docs](https://docs.github.com/en)
+- [Visual Studio Code](https://code.visualstudio.com/)
 - Google SRE Books
   - [Site Reliability Engineering](https://sre.google/sre-book/table-of-contents/)
   - [Site Reliability Workbook](https://sre.google/workbook/table-of-contents/)

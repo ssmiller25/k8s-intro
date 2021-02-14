@@ -246,6 +246,7 @@ HANDSON: Gitlab Actions walkthrough
 - Github
   - [Guides](https://guides.github.com/)
   - [Docs](https://docs.github.com/en)
+  - [Oh Shit, Git!?!](https://ohshitgit.com/)
 - [Visual Studio Code](https://code.visualstudio.com/)
 - Google SRE Books
   - [Site Reliability Engineering](https://sre.google/sre-book/table-of-contents/)

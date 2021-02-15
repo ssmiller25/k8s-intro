@@ -5,7 +5,7 @@ highlightTheme: "monokai"
 slideNumber: true
 title: "Incorporating Development Practices in Operations"
 description: "The pace of change in today's modern technology landscape can make meeting business expectations difficult.   Various tools and processes will be presented to help increase the ability for operations to meet those expectations while also maintaining availability and compliance targets."
-last-updated: "Feb 6, 2021 - In progress"
+last-updated: "Feb 15, 2021"
 separator: <!--s-->
 verticalSeparator: <!--v-->
 revealOptions:
@@ -23,7 +23,10 @@ revealOptions:
 
 GOAL: 30 minutes presentation, with 15-30 minute Q&A
 
-- Introduction.
+- Introduction of myself
+  - Sr. Systems Engineer at Plex
+  - Multiple other Devops and System Admin roles across a variety of company sizes as well as public institutions
+  - Passion for DevOps Pratices
 
 </aside>
 
@@ -35,7 +38,7 @@ Make operations more efficent by leveraging development tools and techniques.
 
 <aside class="notes">
   - Notice not calling this "DevOps".  A far larger topic that generally involves having a far deeper connection between operatiosn and production.
-    - Focus on Agility.  HOw to become "cloud-like" without necessarily leveraging cloud
+    - Focus on existing operational teams, and practices to make them more efficent (Agile)
   - Survey
     - How would you describe your team or position:
       - Ops Focused (Sysadmin, etc.)
@@ -51,37 +54,67 @@ Make operations more efficent by leveraging development tools and techniques.
 
 <!--s-->
 
-## Selling the benefit, and address the concerns
+## Selling Change
 
-- Benefits
-  - Repeatability
+Change is hard - make sure you have a good plan to sell it.
+
+<aside class="notes">
+
+- No matter if your an individual contributor pitchign this to your team or a manager, you need to get buy-in.
+
+</aside>
+
+<!--v-->
+
+## Selling Change
+
+- Highlight Benefits
+  - Reduce toil
+  - True History of Changes - including authorship
   - Documentation
-  - True history of changes - including authorship
-  - Peer approval workflow
-  - Auditability
-- Concerns
-  - "In a down situation, this may slow me down"
+  - Peer Review workflow
+
+<aside class="notes">
+- Toil, as defined by Googe:  <https://sre.google/sre-book/eliminating-toil/>
+- History of changes
+  - How many times have you seen a recent change, and when "why"...and really "who did this change"
+  - Why is this particlar flag flipps...say a configuration on a load balancer
+- Documentation: Reduce hidden processes.
+  - At a minimum you have a script that can be reviewed for the process
+  - Better yet, documentation alongside the script explaining the "why"
+- Peer Review Workflow
+  - Make everyone better by requiring at least one person to review
+
+</aside>
+
+<!--v-->
+## Selling Change
+
+- Address Concerns
+  - "In a outage situation, this may slow me down"
   - "I don't want to be a programmer"
 
 <aside class="notes">
 
 - Benefits
 - "In an emergency, I just want to change a setting to fix something": 
+  - More of an issue with high-end automation (GitOps, etc).  Code actually managing infrasture/settings
+  - One off changes increase "tech debt".  Make sure, at a minimum, to have a process to review and eliminate the reason for the one-off change
   - That's ok, but how do we remember why that setting was changed in future years.   Even if put into a change management system, searching for it can be difficult
 - "I don't want to be a programmer"
-  - We work in IT, whose overall goal is to make our business more efficient by making processes more efficient and less manual.   We need to embrace that internally. 
-    - And you don't need to be a full programmer
+  - You don't need to be a full programmer
+  - We work in IT, whose overall goal is to make our business more efficient by making processes more efficient and less manual.   We need to embrace that internally.
 
 </aside>
 
 <!--v-->
-
-## Selling the benefit, and address the concerns
+## Selling Change
 
 Work within your environment
 
 <aside class="notes">
 
+- I will be highlighting specific tools - but in reality, you should embrase tools already in use by your organization.
 - Although not focusing on Devops, reach out to your developers, and see if you can align with their tooling and methodology
   - Code editor(s)
   - Version Control
@@ -97,16 +130,15 @@ Work within your environment
 Don't try to "boil the ocean"
 
 <aside class="notes">
-There are a lot of opportunity, but don't let that impeed you from taking more immediate action.  Better to take an Agile approach overall versus waterfall
+- There are a lot of opportunity, but don't let that impeed you from taking more immediate action. 
+- Better to take an Agile approach overall versus waterfall
 </aside>
 
 <!--s-->
-
-
 ## Step 1: Scripts
 
 - Might already have them
-- Or look for areas of "toil" that could be improved
+- Or look for areas of toil that could be improved
   - Manual
   - Repetitve
   - Automatable
@@ -116,7 +148,6 @@ There are a lot of opportunity, but don't let that impeed you from taking more i
 - Scripts - but don't have to be too complex
   - Might already have these in place - in that case, work from those scripts that you are already using
   - More common in Linux environments, but Windows shops may have quite a collection of powershell as well
-- Toil, as defined by Googe:  <https://sre.google/sre-book/eliminating-toil/>
 - Example areas
   - Maintenance windows - probably common processes that are manually can be error prone due to human need
   - Pagable events - is there a common "page" and a set of actions to resolve (look at X items and perform Y actions)
@@ -124,7 +155,6 @@ There are a lot of opportunity, but don't let that impeed you from taking more i
 </aside>
 
 <!--v-->
-
 ## Step 1: Scripts
 
 Scripting Langauges
@@ -134,14 +164,16 @@ Scripting Langauges
 
 <aside class="notes">
 
-Languages to focus on initially
+- Languages to focus on initially
+- Target existing experience
 
 </aside>
 
 <!--v-->
+## Step 1: Scripts
 
-### Hands On - Cleanup Logs
-But first - need to make some logs
+Hands On Example: Log Cleanup
+- Have to make some test logs
 
 ```sh
 #!/bin/sh
@@ -161,8 +193,9 @@ done
 </aside>
 
 <!--v-->
+## Step 1: Scripts
 
-### Hands On - Cleanup Logs
+Hands On Example: Log Cleanup
 
 ```sh
 #!/bin/sh
@@ -211,6 +244,13 @@ Github - A good place to get started
 
 <aside class="notes">
 
+- Need both a source control system along with the system around code reviews, pipeline automation , etc
+  - Github ideal if getting started.  Well known in the public community, owned by Micorosft
+  - Other ones you might run already in your company
+    - Azure DevOps (what was Microsoft TFS a **long** time ago)
+    - Atlassian BitBucket
+    - Gitlab
+    - And many other options
 - HANDSON: VSCode and Github tutorial
   - Signup for github:  https://www.github.com
   - Will need a legit email.
@@ -294,8 +334,12 @@ Backup - Github Walkthrough - signup
 
 <aside class="notes">
 
-You have the scripts, now implement them
-HANDSON: Gitlab Actions walkthrougg
+Once you are used to using a repo with your code, take advantage of pipelines to help automatically test and deploy your code.
+
+- Only looking at some testing
+- Deployment a larger subject
+
+HANDSON: Gitlab Actions walkthrough
 
 - [SuperLinter tutorial](https://docs.github.com/en/actions/quickstart)
   - Commit to main branch (although PR could be more appropriate for larger installs)
@@ -353,7 +397,8 @@ Error
 
 <aside class="notes">
 
-- Visual Studio Code
+- IDE
+  - Visual Studio Code
   - Probably do not want to manually upload/edit on web interface
   - VSCode is exteremly popular in the lightweight IDE catagory
 - Iac Frameworks

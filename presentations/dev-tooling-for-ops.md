@@ -19,7 +19,7 @@ revealOptions:
 - Devops Practioner
 - Sr. Systems Engineer at Plex Systems (Not **that** Plex...)
 
-<aside class="notes">
+Note:
 
 GOAL: 30 minutes presentation, with 15-30 minute Q&A
 
@@ -28,29 +28,26 @@ GOAL: 30 minutes presentation, with 15-30 minute Q&A
   - Multiple other Devops and System Admin roles across a variety of company sizes as well as public institutions
   - Passion for DevOps Pratices
 
-</aside>
-
 <!--s-->
 
 ## Goal
 
 Make operations more efficent by leveraging development tools and techniques.
 
-<aside class="notes">
-  - Notice not calling this "DevOps".  A far larger topic that generally involves having a far deeper connection between operatiosn and production.
-    - Focus on existing operational teams, and practices to make them more efficent (Agile)
-  - Survey
-    - How would you describe your team or position:
-      - Ops Focused (Sysadmin, etc.)
-      - Dev Focused (Software Engineer, etc. )
-      - DevOps (Full Stack, Site Reliability, Devops)
-    - OS Platforms:
-      - Linux
-      - *nix
-      - Windows
-      - Docker
+Note:
 
-</aside>
+- Notice not calling this "DevOps".  A far larger topic that generally involves having a far deeper connection between operatiosn and production.
+  - Focus on existing operational teams, and practices to make them more efficent (Agile)
+- Survey
+  - How would you describe your team or position:
+    - Ops Focused (Sysadmin, etc.)
+    - Dev Focused (Software Engineer, etc. )
+    - DevOps (Full Stack, Site Reliability, Devops)
+  - OS Platforms:
+    - Linux
+    - *nix
+    - Windows
+    - Docker
 
 <!--s-->
 
@@ -58,11 +55,9 @@ Make operations more efficent by leveraging development tools and techniques.
 
 Change is hard - make sure you have a good plan to sell it.
 
-<aside class="notes">
+Note:
 
 - No matter if your an individual contributor pitchign this to your team or a manager, you need to get buy-in.
-
-</aside>
 
 <!--v-->
 
@@ -74,7 +69,7 @@ Change is hard - make sure you have a good plan to sell it.
   - Documentation
   - Peer Review workflow
 
-<aside class="notes">
+Note:
 - Toil, as defined by Googe:  <https://sre.google/sre-book/eliminating-toil/>
 - History of changes
   - How many times have you seen a recent change, and when "why"...and really "who did this change"
@@ -85,8 +80,6 @@ Change is hard - make sure you have a good plan to sell it.
 - Peer Review Workflow
   - Make everyone better by requiring at least one person to review
 
-</aside>
-
 <!--v-->
 ## Selling Change
 
@@ -94,7 +87,7 @@ Change is hard - make sure you have a good plan to sell it.
   - "In a outage situation, this may slow me down"
   - "I don't want to be a programmer"
 
-<aside class="notes">
+Note:
 
 - Benefits
 - "In an emergency, I just want to change a setting to fix something": 
@@ -105,14 +98,12 @@ Change is hard - make sure you have a good plan to sell it.
   - You don't need to be a full programmer
   - We work in IT, whose overall goal is to make our business more efficient by making processes more efficient and less manual.   We need to embrace that internally.
 
-</aside>
-
 <!--v-->
 ## Selling Change
 
 Work within your environment
 
-<aside class="notes">
+Note:
 
 - I will be highlighting specific tools - but in reality, you should embrase tools already in use by your organization.
 - Although not focusing on Devops, reach out to your developers, and see if you can align with their tooling and methodology
@@ -129,10 +120,9 @@ Work within your environment
 
 Don't try to "boil the ocean"
 
-<aside class="notes">
+Note:
 - There are a lot of opportunity, but don't let that impeed you from taking more immediate action. 
 - Better to take an Agile approach overall versus waterfall
-</aside>
 
 <!--s-->
 ## Step 1: Scripts
@@ -143,7 +133,7 @@ Don't try to "boil the ocean"
   - Repetitve
   - Automatable
 
-<aside class="notes">
+Note:
 
 - Scripts - but don't have to be too complex
   - Might already have these in place - in that case, work from those scripts that you are already using
@@ -151,8 +141,6 @@ Don't try to "boil the ocean"
 - Example areas
   - Maintenance windows - probably common processes that are manually can be error prone due to human need
   - Pagable events - is there a common "page" and a set of actions to resolve (look at X items and perform Y actions)
-
-</aside>
 
 <!--v-->
 ## Step 1: Scripts
@@ -162,12 +150,10 @@ Scripting Langauges
 - **Linux:** Shell/Python
 - **Windows:** Powershell
 
-<aside class="notes">
+Note:
 
 - Languages to focus on initially
 - Target existing experience
-
-</aside>
 
 <!--v-->
 ## Step 1: Scripts
@@ -185,12 +171,10 @@ for i in $(seq 1 14); do
 done
 ```
 
-<aside class="notes">
+Note:
 
 - Cleanup files older then X on a regular basis
 - COPY: Links to actual "raw" download on Github
-
-</aside>
 
 <!--v-->
 ## Step 1: Scripts
@@ -208,13 +192,10 @@ find ${LOGDIR} -mtime +${MAXAGE} | xargs ls -l
 
 <sub>Avoiding the actual deletion...</sub>
 
-
-<aside class="notes">
+Note:
 
 - Now we clean up the files
   - Yes, not really putting the delete in there...just in case...
-
-</aside>
 
 <!--s-->
 
@@ -226,7 +207,7 @@ Manage that code properly.  For operations
 - Blame Reports
 - Peer Review and Approval
 
-<aside class="notes">
+Note:
 
 Selling points
 
@@ -234,15 +215,12 @@ Selling points
 - Blame reports.  Every wonder how added a line..and why?
 - Peer review.  Actually force someone else to read your scripts.  Increases chances for catching mistakes
 
-</aside>
-
 <!--v-->
-
 ## Step 2: Version Control
 
 Github - A good place to get started
 
-<aside class="notes">
+Note:
 
 - Need both a source control system along with the system around code reviews, pipeline automation , etc
   - Github ideal if getting started.  Well known in the public community, owned by Micorosft
@@ -265,20 +243,15 @@ Github - A good place to get started
   - [Github Hellow Word](https://guides.github.com/activities/hello-world/)
   - [Git Flow](https://guides.github.com/introduction/flow/)
 
-
-</aside>
-
 <!--v-->
 
 ## Step 2: Version Control
 
 ![Github Home](dev-tooling-for-ops/github-home.png)
 
-<aside class="notes">
+Note:
 
 Backup - Github Walkthrough
-
-</aside>
 
 <!--v-->
 
@@ -286,12 +259,9 @@ Backup - Github Walkthrough
 
 ![Github Signup](dev-tooling-for-ops/github-signup.png)
 
-<aside class="notes">
+Note:
 
 Backup - Github Walkthrough - signup
-
-
-</aside>
 
 <!--v-->
 
@@ -332,22 +302,18 @@ Backup - Github Walkthrough - signup
   - Testing
   - Implementation
 
-<aside class="notes">
+Note:
 
+HANDSON: Gitlab Actions walkthrough
 Once you are used to using a repo with your code, take advantage of pipelines to help automatically test and deploy your code.
 
 - Only looking at some testing
 - Deployment a larger subject
-
-HANDSON: Gitlab Actions walkthrough
-
 - [SuperLinter tutorial](https://docs.github.com/en/actions/quickstart)
   - Commit to main branch (although PR could be more appropriate for larger installs)
   - Wait for Output (or step ahead for screenshot below)
   - If time, submit PR to fix errors, view output
   - And use PR as opportunity to demo how Pull Requests work, with Peer Reviews
-
-</aside>
 
 <!--v-->
 
@@ -395,7 +361,7 @@ Error
   - Configuration Management
   - Gitops/Kubernetes
 
-<aside class="notes">
+Note:
 
 - IDE
   - Visual Studio Code
@@ -414,7 +380,7 @@ Error
 - GitOps/Kubernetes
   - More for Microservice styled architectures - but worthy of it's own discussion
 
-</aside>
+
 
 <!--s-->
 

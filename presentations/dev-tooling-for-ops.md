@@ -177,6 +177,20 @@ Github - A good place to get started
 
 ## Step 2: Version Control
 
+
+![Github Home](dev-tooling-for-ops/github-home.png)
+
+<aside class="notes">
+
+Backup - Github Walkthgouhg
+
+</aside>
+
+
+<!--s-->
+
+## Step 2: Version Control
+
 ## IDE 
 
 - Not Required, but can make Version Control Adoption Easier

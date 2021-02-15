@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: k8s-intro-ingress
+  name: present-ingress
 spec:
   rules:
   - http:

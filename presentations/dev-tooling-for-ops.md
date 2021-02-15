@@ -248,7 +248,7 @@ Backup - Github Walkthrough
 
 <aside class="notes">
 
-Backup - Github Walkthrough - signupt
+Backup - Github Walkthrough - signup
 
 
 </aside>

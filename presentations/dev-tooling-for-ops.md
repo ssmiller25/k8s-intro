@@ -138,6 +138,51 @@ Languages to focus on initially
 
 </aside>
 
+<!--v-->
+
+### Hands On - Cleanup Logs
+But first - need to make some logs
+
+```sh
+#!/bin/sh
+LOGDIR=${LOGDIR:="/tmp/logdir"}
+mkdir -p $LOGDIR
+for i in $(seq 1 14); do
+  newdate=$(date +%Y%m%d -d now-${i}days)
+  touch -d ${newdate} ${LOGDIR}/file-${i}.log 
+done
+```
+
+<aside class="notes">
+
+- Cleanup files older then X on a regular basis
+- COPY: Links to actual "raw" download on Github
+
+</aside>
+
+<!--v-->
+
+### Hands On - Cleanup Logs
+
+```sh
+#!/bin/sh
+
+LOGDIR=${LOGDIR:="/tmp/logdir"}
+MAXAGE=${MAXAGE:="7"}
+
+find ${LOGDIR} -mtime +${MAXAGE} | xargs ls -l
+```
+
+<sub>Avoiding the actual deletion...</sub>
+
+
+<aside class="notes">
+
+- Now we clean up the files
+  - Yes, not really putting the delete in there...just in case...
+
+</aside>
+
 <!--s-->
 
 ## Step 2: Version Control
@@ -167,6 +212,16 @@ Github - A good place to get started
 <aside class="notes">
 
 - HANDSON: VSCode and Github tutorial
+  - Signup for github:  https://www.github.com
+  - Will need a legit email.
+  - Create our first repo
+  - Pay attentionto **private** or **public**
+  - Also, emphasis **no private data should ever be uploaded to a repo directly!**
+  - Upload scripts through Web Interface
+  - Edit script in Web Interface to add description
+  - Look at history
+  - Look at history and blame report ofr bigger file: <https://github.com/kubernetes/kubernetes/blob/master/build/make-build-image.sh>
+- Resources:
   - [Github Hellow Word](https://guides.github.com/activities/hello-world/)
   - [Git Flow](https://guides.github.com/introduction/flow/)
 
@@ -177,57 +232,130 @@ Github - A good place to get started
 
 ## Step 2: Version Control
 
-
 ![Github Home](dev-tooling-for-ops/github-home.png)
 
 <aside class="notes">
 
-Backup - Github Walkthgouhg
+Backup - Github Walkthrough
 
 </aside>
 
-
-<!--s-->
+<!--v-->
 
 ## Step 2: Version Control
 
-## IDE 
+![Github Signup](dev-tooling-for-ops/github-signup.png)
 
-- Not Required, but can make Version Control Adoption Easier
+<aside class="notes">
+
+Backup - Github Walkthrough - signupt
+
+
+</aside>
+
+<!--v-->
+
+## Step 2: Version Control
+
+![Git Create Repo 1](dev-tooling-for-ops/github-createrepo1.png)
+
+<!--v-->
+
+## Step 2: Version Control
+
+![Git Create Repo 2](dev-tooling-for-ops/github-createrepo2.png)
+
+<!--v-->
+
+## Step 2: Version Control
+
+![Git Upload File 1](dev-tooling-for-ops/github-upload1.png)
+
+<!--v-->
+
+## Step 2: Version Control
+
+![Git Upload File 1](dev-tooling-for-ops/github-upload2.png)
+
+<!--v-->
+
+## Step 2: Version Control
+
+![Git Blame Example](dev-tooling-for-ops/github-blame.png)
 
 
 <!--s-->
 
 ## Step 3: Pipelines for Your Scripts
 
-- Testing The Scripts
-- Implementing The Scripts
+- Add intellence to your repo
+  - Testing
+  - Implementation
 
 <aside class="notes">
 
 You have the scripts, now implement them
-HANDSON: Gitlab Actions walkthrough
+HANDSON: Gitlab Actions walkthrougg
 
-[SuperLinter tutorial](https://docs.github.com/en/actions/quickstart)
+- [SuperLinter tutorial](https://docs.github.com/en/actions/quickstart)
+  - Commit to main branch (although PR could be more appropriate for larger installs)
+  - Wait for Output (or step ahead for screenshot below)
+  - If time, submit PR to fix errors, view output
+  - And use PR as opportunity to demo how Pull Requests work, with Peer Reviews
 
 </aside>
 
+<!--v-->
+
+## Step 3: Pipelines for Your Scripts
+
+Create workflow configuration - Github's "Super Linter"
+
+![Pipeline Configuration](dev-tooling-for-ops/pipeline1.png)
+
+<!--v-->
+
+## Step 3: Pipelines for Your Scripts
+
+Runs on commits
+
+![Pipeline Running](dev-tooling-for-ops/pipeline2.png)
+
+<!--v-->
+
+## Step 3: Pipelines for Your Scripts
+
+Error
+
+![Pipeline Error](dev-tooling-for-ops/pipeline3-error.png)
 
 
 <!--s-->
 ## Conclusion
 
+- Big Steps
+  - Reduce toil by developing code
+  - Put Code into version control
+  - Develop pipelines and review processes to make code better
 - Assist in:
   - Uptime - more automation and repeatable processes
-  - Documentation: source code itself, along with other artifact, can serve as an important 
+  - Documentation: source code itself, along with other artifact, can serve as an important
+
+<!--v-->
+
+## Conclusion
 
 - Taking it Futher
+  - IDE Environments (Visual Studio Code)
   - Infrastructure as Code (IaC)
   - Configuration Management
   - Gitops/Kubernetes
 
 <aside class="notes">
 
+- Visual Studio Code
+  - Probably do not want to manually upload/edit on web interface
+  - VSCode is exteremly popular in the lightweight IDE catagory
 - Iac Frameworks
   - Useful for more cloud-based architectures
   - Terraform (probably biggest)

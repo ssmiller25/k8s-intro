@@ -28,9 +28,13 @@ spec:
         app: present
     spec:
       containers:
-      - image: quay.io/ssmiller25/present
+      - image: quay.io/ssmiller25/present:23110eb
         imagePullPolicy: Always
         name: present
+        args:
+          - '/slides'
+          - '--listing-template'
+          - 'template/index.html'
         ports:
         - containerPort: 1948
         resources: 

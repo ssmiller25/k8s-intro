@@ -1,8 +1,15 @@
-# Steve Miller Presentations
+# [Steve Miller's Presentations](https://present.r15cookie.com)
 
 Presentations created by [Steve Miller](https://www.r15cookie.com/about/)  All done with [reveal.js](https://revealjs.com/) with markdown source material.
 
 ## Usage
+
+- Main site <https://present.r15cookie.com>
+- Shortcut keys
+  - Showing Speaker Notes in popup window: "S"
+  - Overview Mode "O"
+
+## Building
 
 - To build:
 
@@ -16,9 +23,6 @@ Presentations created by [Steve Miller](https://www.r15cookie.com/about/)  All d
   make run
   ```
 
-- Shortcut keys
-  - Showing Speaker Notes in popup window: "S"
-  - Overview Mode "O"
 
 - To Stop
   ```sh

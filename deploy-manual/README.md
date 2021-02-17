@@ -1,3 +1,3 @@
 # Manual deployment commands
 
-Used during presentation.  See /deploy for a more appropriate deployment strategy.
+Used during Kubernetes presentation.  See kustomization.yaml and /manifests for a more appropriate long-term deployment strategy.

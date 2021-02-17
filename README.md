@@ -1,23 +1,32 @@
 # Steve Miller Presentations
 
-Presentations created  by [Steve Miller](https://www.r15cookie.com/about/)  All done with [reveal.js](https://revealjs.com/) with markdown source material.
+Presentations created by [Steve Miller](https://www.r15cookie.com/about/)  All done with [reveal.js](https://revealjs.com/) with markdown source material.
 
 ## Usage
 
-To build:
+- To build:
 
-```sh
-make build
-```
+  ```sh
+  make build
+  ```
 
-To Run (container will autoremove when stopped manually):
+- To Run (container will autoremove when stopped manually):
 
-```sh
-make run
-```
+  ```sh
+  make run
+  ```
 
-To run a live environment for editing
+- Shortcut keys
+  - Showing Speaker Notes in popup window: "S"
+  - Overview Mode "O"
 
-```sh
-make livedev
-```
+- To Stop
+  ```sh
+  make run
+  ```
+
+- To run a live environment for editing
+
+  ```sh
+  make livedev
+  ```

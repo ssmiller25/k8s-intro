@@ -1,13 +1,13 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: k8s-intro-ingress
+  name: present-ingress
 spec:
   rules:
   - http:
       paths:
       - backend:
-          serviceName: k8s-intro
+          serviceName: present
           servicePort: 1948
         path: /
 status:

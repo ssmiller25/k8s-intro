@@ -5,7 +5,7 @@ highlightTheme: "monokai"
 slideNumber: true
 title: "Incorporating Development Practices in Operations"
 description: "The pace of change in today's modern technology landscape can make meeting business expectations difficult.   Various tools and processes will be presented to help increase the ability for operations to meet those expectations while also maintaining availability and compliance targets."
-last-updated: "Feb 15, 2021"
+last-updated: "Feb 17, 2021"
 separator: <!--s-->
 verticalSeparator: <!--v-->
 revealOptions:
@@ -57,7 +57,7 @@ Change is hard - make sure you have a good plan to sell it.
 
 Note:
 
-- No matter if your an individual contributor pitchign this to your team or a manager, you need to get buy-in.
+- No matter if your an individual contributor pitching this to your team or a manager, you need to get buy-in.
 
 <!--v-->
 
@@ -73,7 +73,7 @@ Note:
 - Toil, as defined by Googe:  <https://sre.google/sre-book/eliminating-toil/>
 - History of changes
   - How many times have you seen a recent change, and when "why"...and really "who did this change"
-  - Why is this particlar flag flipps...say a configuration on a load balancer
+  - Why is this particular flag flips...say a configuration on a load balancer
 - Documentation: Reduce hidden processes.
   - At a minimum you have a script that can be reviewed for the process
   - Better yet, documentation alongside the script explaining the "why"
@@ -105,7 +105,7 @@ Work within your environment
 
 Note:
 
-- I will be highlighting specific tools - but in reality, you should embrase tools already in use by your organization.
+- I will be highlighting specific tools - but in reality, you should embrace tools already in use by your organization.
 - Although not focusing on Devops, reach out to your developers, and see if you can align with their tooling and methodology
   - Code editor(s)
   - Version Control
@@ -121,7 +121,8 @@ Note:
 Don't try to "boil the ocean"
 
 Note:
-- There are a lot of opportunity, but don't let that impeed you from taking more immediate action. 
+
+- There are a lot of opportunity, but don't let that impede you from taking more immediate action. 
 - Better to take an Agile approach overall versus waterfall
 
 <!--s-->
@@ -130,8 +131,8 @@ Note:
 - Might already have them
 - Or look for areas of toil that could be improved
   - Manual
-  - Repetitve
-  - Automatable
+  - Repetitive
+  - Automate-able
 
 Note:
 
@@ -140,7 +141,7 @@ Note:
   - More common in Linux environments, but Windows shops may have quite a collection of powershell as well
 - Example areas
   - Maintenance windows - probably common processes that are manually can be error prone due to human need
-  - Pagable events - is there a common "page" and a set of actions to resolve (look at X items and perform Y actions)
+  - Page-able events - is there a common "page" and a set of actions to resolve (look at X items and perform Y actions)
 
 <!--v-->
 ## Step 1: Scripts
@@ -159,7 +160,8 @@ Note:
 ## Step 1: Scripts
 
 Hands On Example: Log Cleanup
-- Have to make some test logs
+
+- First have to have some test logs
 
 ```sh
 #!/bin/sh
@@ -203,7 +205,7 @@ Note:
 
 Manage that code properly.  For operations
 
-- Infinate Backups
+- Infinite Backups
 - Blame Reports
 - Peer Review and Approval
 
@@ -211,7 +213,7 @@ Note:
 
 Selling points
 
-- Infiniate backups.  Not just the .bak, .bak2 or .20210201 extenions
+- Infinite backups.  Not just the .bak, .bak2 or .20210201 extensions
 - Blame reports.  Every wonder how added a line..and why?
 - Peer review.  Actually force someone else to read your scripts.  Increases chances for catching mistakes
 
@@ -233,7 +235,7 @@ Note:
   - Signup for github:  https://www.github.com
   - Will need a legit email.
   - Create our first repo
-  - Pay attentionto **private** or **public**
+  - Pay attention to **private** or **public**
   - Also, emphasis **no private data should ever be uploaded to a repo directly!**
   - Upload scripts through Web Interface
   - Edit script in Web Interface to add description
@@ -251,7 +253,7 @@ Note:
 
 Note:
 
-Backup - Github Walkthrough
+Backup - Github Walk-through
 
 <!--v-->
 
@@ -261,7 +263,7 @@ Backup - Github Walkthrough
 
 Note:
 
-Backup - Github Walkthrough - signup
+Backup - Github Walk-through - signup
 
 <!--v-->
 
@@ -298,13 +300,13 @@ Backup - Github Walkthrough - signup
 
 ## Step 3: Pipelines for Your Scripts
 
-- Add intellence to your repo
+- Add intelligence to your repo
   - Testing
   - Implementation
 
 Note:
 
-HANDSON: Gitlab Actions walkthrough
+HANDSON: Gitlab Actions walk-through
 Once you are used to using a repo with your code, take advantage of pipelines to help automatically test and deploy your code.
 
 - Only looking at some testing
@@ -355,7 +357,7 @@ Error
 
 ## Conclusion
 
-- Taking it Futher
+- Taking it Further
   - IDE Environments (Visual Studio Code)
   - Infrastructure as Code (IaC)
   - Configuration Management
@@ -366,13 +368,13 @@ Note:
 - IDE
   - Visual Studio Code
   - Probably do not want to manually upload/edit on web interface
-  - VSCode is exteremly popular in the lightweight IDE catagory
+  - VSCode is extremely popular in the lightweight IDE category
 - Iac Frameworks
   - Useful for more cloud-based architectures
   - Terraform (probably biggest)
   - Pulumi
 - Configuration Management
-  - Useful for more traditional infrastructure.  In order of my perfernce
+  - Useful for more traditional infrastructure.  In order of my preference
     - Ansible
     - Salt
     - Chef
@@ -395,7 +397,7 @@ Note:
 ## Additioanl Resources
 
 - Ansible
-  - [Redhat's Anible Quickstart Guide](https://www.redhat.com/sysadmin/ansible-quick-start)
+  - [Redhat's Ansible Quickstart Guide](https://www.redhat.com/sysadmin/ansible-quick-start)
 - Github
   - [Guides](https://guides.github.com/)
   - [Docs](https://docs.github.com/en)

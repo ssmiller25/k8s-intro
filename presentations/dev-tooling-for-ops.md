@@ -26,18 +26,18 @@ GOAL: 30 minutes presentation, with 15-30 minute Q&A
 - Introduction of myself
   - Sr. Systems Engineer at Plex
   - Multiple other Devops and System Admin roles across a variety of company sizes as well as public institutions
-  - Passion for DevOps Pratices
+  - Passion for DevOps Practices
 
 <!--s-->
 
 ## Goal
 
-Make operations more efficent by leveraging development tools and techniques.
+Make operations more efficient by leveraging development tools and techniques.
 
 Note:
 
-- Notice not calling this "DevOps".  A far larger topic that generally involves having a far deeper connection between operatiosn and production.
-  - Focus on existing operational teams, and practices to make them more efficent (Agile)
+- Notice not calling this "DevOps".  Far larger topic
+  - Focus on existing operational teams, and practices to make them more efficient (Agile)
 - Survey
   - How would you describe your team or position:
     - Ops Focused (Sysadmin, etc.)
@@ -64,13 +64,14 @@ Note:
 ## Selling Change
 
 - Highlight Benefits
-  - Reduce toil
+  - Reduce Toil
   - True History of Changes - including authorship
   - Documentation
   - Peer Review workflow
 
 Note:
-- Toil, as defined by Googe:  <https://sre.google/sre-book/eliminating-toil/>
+
+- Toil, as defined by Google:  <https://sre.google/sre-book/eliminating-toil/>
 - History of changes
   - How many times have you seen a recent change, and when "why"...and really "who did this change"
   - Why is this particular flag flips...say a configuration on a load balancer
@@ -84,19 +85,19 @@ Note:
 ## Selling Change
 
 - Address Concerns
-  - "In a outage situation, this may slow me down"
   - "I don't want to be a programmer"
+  - "In a outage situation, this may slow me down"
 
 Note:
 
-- Benefits
-- "In an emergency, I just want to change a setting to fix something": 
-  - More of an issue with high-end automation (GitOps, etc).  Code actually managing infrasture/settings
-  - One off changes increase "tech debt".  Make sure, at a minimum, to have a process to review and eliminate the reason for the one-off change
-  - That's ok, but how do we remember why that setting was changed in future years.   Even if put into a change management system, searching for it can be difficult
 - "I don't want to be a programmer"
-  - You don't need to be a full programmer
-  - We work in IT, whose overall goal is to make our business more efficient by making processes more efficient and less manual.   We need to embrace that internally.
+  - Don't need to be full programmer
+  - IT is about automation overall
+- "In an emergency, I just want to change a setting to fix something": 
+  - More issue with IaC
+  - One off changes are "tech debt".  Have process to control/root cause analysis
+  - Hard to document or follow through if outside code
+
 
 <!--v-->
 ## Selling Change
@@ -105,12 +106,12 @@ Work within your environment
 
 Note:
 
-- I will be highlighting specific tools - but in reality, you should embrace tools already in use by your organization.
-- Although not focusing on Devops, reach out to your developers, and see if you can align with their tooling and methodology
+- This presentation: using specific tools
+- Reach out to developers
   - Code editor(s)
   - Version Control
   - Pipelines
-- But do **not** if it does not line up with your goals
+- But do **not** let it slow you down if tools inappropriate
 
 </notes>
 
@@ -118,12 +119,12 @@ Note:
 
 ## Selling the benefit, and address the concerns
 
-Don't try to "boil the ocean"
+Don't try to tackle everything at once ("boil the ocean")
 
 Note:
 
-- There are a lot of opportunity, but don't let that impede you from taking more immediate action. 
-- Better to take an Agile approach overall versus waterfall
+- Easy to get excited
+- Take an Agile approach
 
 <!--s-->
 ## Step 1: Scripts
@@ -146,7 +147,7 @@ Note:
 <!--v-->
 ## Step 1: Scripts
 
-Scripting Langauges
+Scripting Languages
 
 - **Linux:** Shell/Python
 - **Windows:** Powershell
@@ -232,7 +233,7 @@ Note:
     - Gitlab
     - And many other options
 - HANDSON: VSCode and Github tutorial
-  - Signup for github:  https://www.github.com
+  - Sign-up for github:  https://www.github.com
   - Will need a legit email.
   - Create our first repo
   - Pay attention to **private** or **public**
@@ -341,7 +342,6 @@ Error
 
 ![Pipeline Error](dev-tooling-for-ops/pipeline3-error.png)
 
-
 <!--s-->
 ## Conclusion
 
@@ -381,8 +381,6 @@ Note:
     - Puppet
 - GitOps/Kubernetes
   - More for Microservice styled architectures - but worthy of it's own discussion
-
-
 
 <!--s-->
 

@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2021-02-17
+
 - New presentation - Dev Tooling for Ops
 
 ## [1.0.0] - 2021-02-06

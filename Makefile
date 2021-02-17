@@ -1,6 +1,6 @@
 
 git_hash = $(shell git rev-parse --short -q HEAD)
-version := 1.0.0
+version := 1.1.0
 release_date := $(shell date +%Y-%m-%d)
 run_flags := /slides --listing-template template/index.html
 reveal_version := 5.0.0

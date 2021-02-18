@@ -1,22 +1,20 @@
-apiVersion: networking.k8s.io/v1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: present
+  name: k8s-intro-ingress
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   rules:
-  - host: present.r15cookie.com
-    http:
+  - http:
       paths:
-      - pathType: ImplementationSpecific
+      - backend:
+          serviceName: present
+          servicePort: 1948
         path: /
-        backend:
-          service:
-            name: present
-            port: 
-              number: 1948
   tls:
   - hosts:
     - present.r15cookie.com
-    secretName: present-cert
+    secretName: present-tls
 status:
   loadBalancer: {}

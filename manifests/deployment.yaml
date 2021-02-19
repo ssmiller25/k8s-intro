@@ -28,7 +28,7 @@ spec:
         app: present
     spec:
       containers:
-      - image: quay.io/ssmiller25/present:23110eb
+      - image: quay.io/ssmiller25/present:38e6140
         imagePullPolicy: Always
         name: present
         args:

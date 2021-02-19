@@ -238,6 +238,7 @@ Note:
   - Create our first repo
   - Pay attention to **private** or **public**
   - Also, emphasis **no private data should ever be uploaded to a repo directly!**
+    - Expand on in Pipeline Discussion
   - Upload scripts through Web Interface
   - Edit script in Web Interface to add description
   - Look at history
@@ -304,6 +305,7 @@ Backup - Github Walk-through - signup
 - Add intelligence to your repo
   - Testing
   - Implementation
+  - Security Scanning
 
 Note:
 
@@ -312,6 +314,8 @@ Once you are used to using a repo with your code, take advantage of pipelines to
 
 - Only looking at some testing
 - Deployment a larger subject
+- Security Scanning!  Bring up supply chain attacks
+  - [GitGuardian](https://www.gitguardian.com/) - Free for public/open source repos.  SaaS to scan for credentials being committed
 - [SuperLinter tutorial](https://docs.github.com/en/actions/quickstart)
   - Commit to main branch (although PR could be more appropriate for larger installs)
   - Wait for Output (or step ahead for screenshot below)
@@ -341,6 +345,12 @@ Runs on commits
 Error
 
 ![Pipeline Error](dev-tooling-for-ops/pipeline3-error.png)
+
+<!--v-->
+
+## Step 3: Pipelines for Your Scripts
+
+Adding
 
 <!--s-->
 ## Conclusion

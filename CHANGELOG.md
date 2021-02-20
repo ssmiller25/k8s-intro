@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2021-02-20
+
+- Minor updates for "Dev Tooling for Ops"
+- Remove need to pass arguments to docker container
+
 ## [1.1.0] - 2021-02-17
 
 - New presentation - Dev Tooling for Ops

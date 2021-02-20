@@ -46,7 +46,7 @@ imagedev: stop
 
 .PHONY: stop
 stop:
-	@docker stop present || true
+	@docker stop present > /dev/null 2>&1 || true
 # Have to give docker a few seconds to actually delete the container once stopped
 	@sleep 4
 

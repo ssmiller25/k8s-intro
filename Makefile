@@ -2,7 +2,6 @@
 git_hash = $(shell git rev-parse --short -q HEAD)
 version := 1.1.0
 release_date := $(shell date +%Y-%m-%d)
-run_flags := /slides --listing-template template/index.html
 reveal_version := 5.0.0
 
 
@@ -28,7 +27,7 @@ build:
 
 .PHONY: run
 run: stop
-	docker run -d --rm -p 1948:1948 --name present $(DOCKER_REPO)/present:${git_hash} ${run_flags}
+	docker run -d --rm -p 1948:1948 --name present $(DOCKER_REPO)/present:${git_hash} 
 
 .PHONY: push
 push:
@@ -39,11 +38,11 @@ push:
 
 .PHONY: livedev
 livedev: stop
-	docker run -d --rm --name present -p 1948:1948 -v $(PWD)/presentations:/slides quay.io/ssmiller25/reveal-md:latest ${run_flags}
+	docker run -d --rm --name present -p 1948:1948 -v $(PWD)/presentations:/slides quay.io/ssmiller25/reveal-md:latest 
 
 .PHONY: imagedev
 imagedev: stop
-	docker run -d --rm --name present -p 1948:1948 $(DOCKER_REPO)/present:${git_hash} ${run_flags}
+	docker run -d --rm --name present -p 1948:1948 $(DOCKER_REPO)/present:${git_hash} 
 
 .PHONY: stop
 stop:

@@ -12,6 +12,8 @@ COPY presentations/. /slides/
 
 EXPOSE 1948
 
+CMD [ "/slides", "--listing-template", "template/index.html" ]
+
 LABEL maintainer="Steve Miller <me@r15cookie.com>"
 LABEL version="${VERSION}"
 LABEL git_hash="${GIT_HASH}"

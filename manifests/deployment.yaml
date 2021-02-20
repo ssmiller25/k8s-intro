@@ -31,10 +31,6 @@ spec:
       - image: quay.io/ssmiller25/present:80c9dfe
         imagePullPolicy: Always
         name: present
-        args:
-          - '/slides'
-          - '--listing-template'
-          - 'template/index.html'
         ports:
         - containerPort: 1948
         resources: 

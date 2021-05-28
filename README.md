@@ -37,7 +37,12 @@ Presentations created by [Steve Miller](https://www.r15cookie.com/about/)  All d
 
 ## Deployment
 
-1. Setup k8s Cluster
+1. Setup k8s Cluster.  With Civo
+
+```sh
+civo k3s create <clustername> --size g3.k3s.small --nodes 1 --applications cert-manager
+```
+
 2. Set domainname manually to ingress (TODO: exteranl-dns setup...)
 3. Install [cert-manager](https://github.com/jetstack/cert-manager)
 4. Setup an Issuer.  Below example assumes leverage a Trafik for an ingress
